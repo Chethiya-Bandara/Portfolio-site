@@ -6,7 +6,7 @@ const TechStack = () => {
   const stack = [
     {
       category: "Languages & Logic",
-      skills: ["Python", "JavaScript", "TypeScript", "SQL", "C#", "C++"]
+      skills: ["Python", "JavaScript", "TypeScript", "SQL", "C#", "C++", "HTML", "CSS"]
     },
     {
       category: "Frontend & Interface",
@@ -14,11 +14,11 @@ const TechStack = () => {
     },
     {
       category: "Backend & Systems",
-      skills: ["FastAPI", "Node.js", "Flask", "PostgreSQL", "Supabase", "MongoDB",  "MySQL"]
+      skills: ["FastAPI", "Node.js", "Flask", "PostgreSQL", "Supabase", "SQL Server",  "MySQL", "Ruby on Rails"]
     },
     {
       category: "Tools & Concepts",
-      skills: ["Unity", "Git", "Github", "Docker", "Jira", "VS Code", "REST APIs", "OOP", "System Design"]
+      skills: ["Unity", "Git", "Github", "Docker", "Jira", "VS Code", "REST APIs", "OOP", "System Design", "Netlify", "MVC Architecture"]
     }
   ];
 
