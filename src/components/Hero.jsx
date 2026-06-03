@@ -10,7 +10,7 @@ const Hero = () => {
         <PixelBlast
           variant="square"
           pixelSize={4}
-          color="#0b0149"
+          color="#2200ff"
           patternScale={2}
           patternDensity={1}
           pixelSizeJitter={0}
@@ -29,27 +29,12 @@ const Hero = () => {
       </div>
 
       {/* Content Layer */}
-      {/* Removed pointer-events-none here so the buttons can be clicked! */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
         className="relative z-10 flex flex-col items-center"
       >
-        {/* NEW: System Status Badge */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-8 px-4 py-1.5 rounded-full border border-blue-500/20 bg-blue-500/10 backdrop-blur-sm flex items-center gap-2 text-xs md:text-sm font-mono text-blue-400"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-          </span>
-          System Online // Initializing sequence
-        </motion.div>
-
         <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-6">
           CHETHIYA <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">BANDARA</span>
         </h1>

@@ -14,7 +14,7 @@ const TechStack = () => {
     },
     {
       category: "Backend & Systems",
-      skills: ["FastAPI", "Node.js", "Flask", "PostgreSQL", "Supabase", "SQL Server",  "MySQL", "Ruby on Rails"]
+      skills: ["FastAPI", "Node.js", "Flask", "PostgreSQL", "Supabase", "SQL Server",  "MySQL", "Render"]
     },
     {
       category: "Tools & Concepts",
