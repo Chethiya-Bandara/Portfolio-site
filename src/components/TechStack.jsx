@@ -14,11 +14,11 @@ const TechStack = () => {
     },
     {
       category: "Backend & Systems",
-      skills: ["FastAPI", "Node.js", "Flask", "PostgreSQL", "Supabase", "SQL Server",  "MySQL", "Render"]
+      skills: ["FastAPI", "Node.js", "Express.js", "PostgreSQL", "Supabase", "MySQL", "Render"]
     },
     {
       category: "Tools & Concepts",
-      skills: ["Unity", "Git", "Github", "Docker", "Jira", "VS Code", "REST APIs", "OOP", "System Design", "Netlify", "MVC Architecture"]
+      skills: ["Postman", "Unity", "Github", "Docker", "Jira", "REST APIs", "System Design", "Netlify", "MVC Architecture"]
     }
   ];
 

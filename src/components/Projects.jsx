@@ -31,6 +31,12 @@ const projects = [
     desc: "Sports data analytics platform. A work in progress, which currently supports only CLI version",
     tags: ["Python", "APIs", "Data Visualisation"],
     github: "https://github.com/Chethiya-Bandara/Premier_League_Analysis"
+  },
+  {
+    title: "TaskForge (Under progress)",
+    desc: "Team collaboration platform containing kanban boards and task tracking",
+    tags: ["Express.js", "React", "Postman API Testing"],
+    github: "https://github.com/Chethiya-Bandara/TaskForge"
   }
 ];
 

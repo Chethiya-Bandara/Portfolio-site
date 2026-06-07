@@ -32,25 +32,28 @@ const About = () => {
             
             {/* The Narrative */}
             <div className="lg:col-span-7 space-y-8 text-slate-300">
-              <div className="space-y-4">
-                <p className="text-xl md:text-2xl text-white font-medium leading-snug">
-                  I don't just participate in systems; I optimize them. 
-                </p>
-                <p className="text-lg leading-relaxed">
-                  From my O-Levels through my A-Levels and into University, my trajectory has been defined by a refusal to settle for "good enough." This drive helped me move forward. It wasn't about the accolades—it was about proving that rigorous discipline produces unshakeable results.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  Today, I apply that same academic rigor to full-stack engineering. Whether I'm architecting <span className="text-white underline decoration-blue-500/30 underline-offset-4">high-concurrency healthcare backends</span> or training deep learning models, my goal is to eliminate friction and build for the long term.
-                </p>
-              </div>
+              <div className="space-y-6 text-zinc-400">
+  <p className="text-xl md:text-2xl text-white font-medium leading-snug">
+    I don't just participate in systems; I optimize them.
+  </p>
+  
+  <p className="text-lg leading-relaxed">
+    Throughout my academic journey—from O-Levels and A-Levels to my final year of engineering school—I’ve treated every challenge as an optimization problem. I operate on the belief that rigorous, disciplined engineering always yields superior, predictable outcomes.
+  </p>
+  
+  <p className="text-lg leading-relaxed">
+    I apply this mindset directly to full-stack architecture and machine learning. I anchor technical structures from the trenches, working closely with teams to bridge the gap between complex codebases and seamless user experiences. 
+  </p>
+
+  <p className="text-lg leading-relaxed">
+    From designing <span className="text-white underline decoration-blue-500/30 underline-offset-4">high-concurrency healthcare backends</span> to training predictive models, I eliminate architectural friction to build digital infrastructure that scales.
+  </p>
+</div>
 
               {/* The "Manifesto" list */}
               <div className="space-y-4 pt-6 border-l-2 border-blue-500/20 pl-6">
                 <p className="italic text-slate-400">
-                  <strong className="text-white not-italic">The Philosophy:</strong> Make it clean. Make it make sense. Make it last.
-                </p>
-                <p className="italic text-slate-400">
-                  <strong className="text-white not-italic">The Approach:</strong> I’m a hands-on collaborator who works in the trenches with the team, holding the architectural structure together so the vision can flow.
+                  Working side-by-side with my team, I safeguard the underlying architecture so our creative vision can flow without disruption.
                 </p>
               </div>
             </div>
