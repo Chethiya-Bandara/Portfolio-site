@@ -3,101 +3,360 @@ import { ArrowUpRight } from "lucide-react";
 
 const Connect = () => {
   const socials = [
-    { 
-      name: "GitHub", 
-      url: "https://github.com/Chethiya-Bandara", 
-      color: "hover:text-white hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]" 
+    {
+      name: "GitHub",
+      label: "Projects & Code",
+      url: "https://github.com/Chethiya-Bandara",
+      hover:
+        "hover:text-white hover:border-white/20 hover:bg-white/[0.04]",
     },
-    { 
-      name: "LinkedIn", 
-      url: "https://www.linkedin.com/in/chethiya-bandara-845017330/", 
-      color: "hover:text-blue-400 hover:border-blue-500/20 hover:shadow-[0_0_30px_rgba(59,130,246,0.04)]" 
+    {
+      name: "LinkedIn",
+      label: "Professional Network",
+      url: "https://www.linkedin.com/in/chethiya-bandara-845017330/",
+      hover:
+        "hover:text-blue-300 hover:border-blue-400/25 hover:bg-blue-500/[0.05]",
     },
-    { 
-      name: "Email", 
-      url: "mailto:Chethiyabandara2004@gmail.com", 
-      color: "hover:text-rose-400 hover:border-rose-500/20 hover:shadow-[0_0_30px_rgba(244,63,94,0.04)]" 
+    {
+      name: "Email",
+      label: "Let's talk",
+      url: "mailto:Chethiyabandara2004@gmail.com",
+      hover:
+        "hover:text-cyan-300 hover:border-cyan-400/25 hover:bg-cyan-500/[0.05]",
     },
   ];
 
   return (
-    <section id="contact" className="relative py-32 bg-black border-t border-white/5 overflow-hidden">
-      {/* Structural Tech Grid Backing */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)] pointer-events-none" />
-      
-      <div className="relative z-10 max-w-6xl mx-auto px-8 text-center">
-        
-        {/* Main Heading - Fixed Responsive Scale */}
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
+    <section
+      id="contact"
+      className="
+        relative
+        py-32
+        md:py-40
+        bg-[#050816]
+        border-t
+        border-white/[0.06]
+        overflow-hidden
+      "
+    >
+      {/* Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Grid */}
+        <div
+          className="
+            absolute
+            inset-0
+            opacity-[0.045]
+            bg-[linear-gradient(to_right,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.12)_1px,transparent_1px)]
+            bg-[size:64px_64px]
+          "
+        />
+
+        {/* Blue glow */}
+        <div
+          className="
+            absolute
+            top-[-20%]
+            left-[10%]
+            w-[500px]
+            h-[500px]
+            rounded-full
+            bg-blue-600/[0.08]
+            blur-[150px]
+          "
+        />
+
+        {/* Cyan glow */}
+        <div
+          className="
+            absolute
+            bottom-[-20%]
+            left-[35%]
+            w-[450px]
+            h-[450px]
+            rounded-full
+            bg-cyan-500/[0.06]
+            blur-[150px]
+          "
+        />
+
+        {/* Violet glow */}
+        <div
+          className="
+            absolute
+            top-[20%]
+            right-[-10%]
+            w-[450px]
+            h-[450px]
+            rounded-full
+            bg-violet-600/[0.07]
+            blur-[150px]
+          "
+        />
+
+        {/* Vignette */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[radial-gradient(ellipse_at_center,transparent_25%,rgba(3,5,12,0.8)_100%)]
+          "
+        />
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 text-center">
+        {/* Eyebrow */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl md:text-8xl font-bold text-white mb-8 tracking-tighter"
+          transition={{ duration: 0.6 }}
+          className="flex items-center justify-center gap-3 mb-7"
         >
-          Let's work on{" "}
-          <span className="bg-gradient-to-r from-neutral-100 via-neutral-400 to-neutral-200 bg-clip-text text-transparent">
-            Something.
+          <span className="w-8 h-px bg-gradient-to-r from-transparent to-blue-400/60" />
+
+          <span className="text-[10px] uppercase tracking-[0.35em] text-blue-300/60">
+            Let's Connect
+          </span>
+
+          <span className="w-8 h-px bg-gradient-to-l from-transparent to-blue-400/60" />
+        </motion.div>
+
+        {/* Main heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.75,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="
+            text-5xl
+            sm:text-6xl
+            md:text-8xl
+            lg:text-9xl
+            font-bold
+            tracking-[-0.055em]
+            leading-[0.9]
+            text-white
+          "
+        >
+          Let's build
+          <br />
+
+          <span
+            className="
+              bg-gradient-to-r
+              from-cyan-300
+              via-blue-400
+              to-violet-500
+              bg-clip-text
+              text-transparent
+            "
+          >
+            something.
           </span>
         </motion.h2>
 
-        {/* Supporting Copy Container */}
-        <div className="mb-20 space-y-6 max-w-4xl mx-auto">
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xl md:text-3xl text-neutral-400 leading-tight tracking-tight font-medium"
-          >
-            Feel free to contact me for new challenges to solve and systems to architect. 
-            Let's build something{" "}
-            <span className="relative inline-block text-white group cursor-default">
-              efficient.
-              <span className="absolute bottom-1 left-0 w-full h-[1px] bg-white/30 transition-colors duration-300 group-hover:bg-white" />
+        {/* Supporting text */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.65, delay: 0.15 }}
+          className="max-w-2xl mx-auto mt-8"
+        >
+          <p className="text-base md:text-xl text-white/45 leading-8">
+            Have a problem worth solving, a system worth building, or simply
+            want to talk about technology?
+            <span className="text-white/80">
+              {" "}
+              I’d love to hear from you.
             </span>
-          </motion.p>
+          </p>
+        </motion.div>
 
-          {/* Isolated Resume Callout to fix text overlapping */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 0.5 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xs md:text-sm text-white tracking-widest uppercase block pt-4 font-light"
-          >
-            Email me to request my resume
-          </motion.div>
-        </div>
-        
-        {/* Social Interactive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        {/* Email CTA */}
+        <motion.a
+          href="mailto:Chethiyabandara2004@gmail.com"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.65, delay: 0.25 }}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="
+            group
+            inline-flex
+            items-center
+            gap-3
+            mt-10
+            px-7
+            py-4
+            rounded-xl
+            bg-gradient-to-r
+            from-blue-500
+            to-violet-500
+            text-white
+            text-sm
+            font-semibold
+            shadow-[0_0_30px_rgba(59,130,246,0.12)]
+            hover:shadow-[0_0_40px_rgba(59,130,246,0.22)]
+            transition-all
+            duration-300
+          "
+        >
+          Start a conversation
+
+          <ArrowUpRight
+            size={17}
+            className="
+              transition-transform
+              duration-300
+              group-hover:translate-x-0.5
+              group-hover:-translate-y-0.5
+            "
+          />
+        </motion.a>
+
+        {/* Resume note */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="
+            mt-5
+            text-[10px]
+            uppercase
+            tracking-[0.25em]
+            text-white/20
+          "
+        >
+          Resume available upon request
+        </motion.p>
+
+        {/* Social Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="
+            grid
+            grid-cols-1
+            md:grid-cols-3
+            gap-4
+            max-w-4xl
+            mx-auto
+            mt-20
+          "
+        >
           {socials.map((social) => (
             <motion.a
               key={social.name}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ y: -4, backgroundColor: "rgba(255, 255, 255, 0.03)" }}
-              whileTap={{ scale: 0.99 }}
-              className={`flex items-center justify-between p-6 rounded-xl bg-white/[0.01] border border-white/5 text-neutral-400 transition-all duration-500 ${social.color} group backdrop-blur-md`}
+              whileHover={{
+                y: -5,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
+              className={`
+                group
+                flex
+                items-center
+                gap-4
+                p-5
+                rounded-2xl
+                bg-white/[0.025]
+                backdrop-blur-xl
+                border
+                border-white/[0.08]
+                text-white/50
+                transition-all
+                duration-300
+                ${social.hover}
+              `}
             >
-              <span className="text-xs font-bold uppercase tracking-[0.25em]">
-                {social.name}
-              </span>
-              
-              <ArrowUpRight 
-                size={18} 
-                className="opacity-20 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" 
+              {/* Text */}
+              <div className="flex-1 text-left">
+                <p
+                  className="
+                    text-xs
+                    uppercase
+                    tracking-[0.2em]
+                    font-semibold
+                    text-white/70
+                    group-hover:text-current
+                    transition-colors
+                  "
+                >
+                  {social.name}
+                </p>
+
+                <p className="text-[11px] text-white/25 mt-1">
+                  {social.label}
+                </p>
+              </div>
+
+              {/* Arrow */}
+              <ArrowUpRight
+                size={17}
+                className="
+                  text-white/20
+                  group-hover:text-current
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-all
+                  duration-300
+                  transform
+                  group-hover:translate-x-0.5
+                  group-hover:-translate-y-0.5
+                "
               />
             </motion.a>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Minimal Footer Signature */}
-        <p className="mt-28 text-neutral-600 text-[9px] uppercase tracking-[0.7em] font-medium pointer-events-none select-none">
-          Architected in the void
-        </p>
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="
+            max-w-3xl
+            mx-auto
+            mt-28
+            h-px
+            bg-gradient-to-r
+            from-transparent
+            via-white/10
+            to-transparent
+          "
+        />
+
+        {/* Footer */}
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <p
+            className="
+              text-[9px]
+              uppercase
+              tracking-[0.5em]
+              text-white/20
+            "
+          >
+            Chethiya Bandara
+          </p>
+
+          <p className="text-[10px] text-white/10">
+            © {new Date().getFullYear()} • Built with React & curiosity
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -38,7 +38,7 @@ const About = () => {
   </p>
   
   <p className="text-lg leading-relaxed">
-    Throughout my academic journey—from O-Levels and A-Levels to my final year of engineering school—I’ve treated every challenge as an optimization problem. I operate on the belief that rigorous, disciplined engineering always yields superior, predictable outcomes.
+    Throughout my academic journey, from O-Levels and A-Levels to my final year of university, I’ve treated every challenge as an optimization problem. I operate on the belief that rigorous, disciplined engineering always yields superior, predictable outcomes.
   </p>
   
   <p className="text-lg leading-relaxed">

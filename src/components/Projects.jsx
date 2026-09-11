@@ -1,157 +1,817 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import BorderGlow from "./BorderGlow";
 
 const projects = [
   {
-    title: "Mediconnect",
-    desc: "Worked in a group to develop an automated healthcare management system for pharmacies and hospitals.",
-    tags: ["React", "FastAPI", "PostgreSQL", "Supabase", "Gemini Chatbot"],
-    github: "https://github.com/Mohamed-Ruzaik/MediConnect"
+    title: "MediConnect",
+    desc: "A healthcare management platform developed for pharmacies and hospitals, combining role-based access, patient and medication management, secure APIs, and AI-assisted functionality.",
+    tags: [
+      "React",
+      "FastAPI",
+      "PostgreSQL",
+      "Supabase",
+      "Gemini Chatbot",
+    ],
+    github: "https://github.com/Mohamed-Ruzaik/MediConnect",
+    featured: true,
   },
   {
     title: "Monetra",
-    desc: "Personal finance tracking with Prophet ML forecasting and real time analytics.",
-    tags: ["Next.js", "Prophet ML", "Tailwind", "FastAPI", "Supabase", "Gemini Chatbot"],
-    github: "https://github.com/Chethiya-Bandara/Monetra"
+    desc: "A full-stack personal finance platform for tracking transactions, analysing spending patterns, and generating financial insights with real-time dashboards and Prophet-based forecasting.",
+    tags: [
+      "Next.js",
+      "Prophet ML",
+      "Tailwind",
+      "FastAPI",
+      "Supabase",
+      "Gemini",
+    ],
+    github: "https://github.com/Chethiya-Bandara/Monetra",
+    featured: true,
+  },
+  {
+    title: "TaskForge",
+    desc: "A team collaboration and project management platform featuring Kanban boards, task tracking, project roles, authentication, and structured access control for collaborative development.",
+    tags: [
+      "React",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "JWT",
+      "Zod",
+    ],
+    github: "https://github.com/Chethiya-Bandara/TaskForge",
+    featured: true,
   },
   {
     title: "TumorDetect.AI",
-    desc: "Deep learning CNN to track tumor growth from MRI scans.",
-    tags: ["Python", "TensorFlow", "Streamlit", "Convolutional Neural Networks", "Computer Vision"],
-    github: "https://github.com/Chethiya-Bandara/TumorDetect-AI"
+    desc: "A computer vision application using convolutional neural networks to classify brain MRI scans and assist with tumour detection through an interactive Streamlit interface.",
+    tags: [
+      "Python",
+      "TensorFlow",
+      "Streamlit",
+      "CNN",
+      "Computer Vision",
+    ],
+    github: "https://github.com/Chethiya-Bandara/TumorDetect-AI",
   },
   {
-    title: "Noughts-and-crosses",
-    desc: "Simple tic-tac-toe game with integrated difficulty levels.",
-    tags: ["flutter","dart"],
-    github: "https://github.com/Chethiya-Bandara/noughts-and-crosses"
+    title: "Noughts & Crosses",
+    desc: "A lightweight mobile tic-tac-toe game built with Flutter, featuring multiple difficulty levels and a simple interface designed around responsive gameplay.",
+    tags: ["Flutter", "Dart", "Game Development"],
+    github: "https://github.com/Chethiya-Bandara/noughts-and-crosses",
   },
   {
-    title: "Premier League Analysis Dashboard",
-    desc: "Sports data analytics platform. A work in progress, which currently supports only CLI version",
-    tags: ["Python", "APIs", "Data Visualisation"],
-    github: "https://github.com/Chethiya-Bandara/Premier_League_Analysis"
+    title: "Premier League Analysis",
+    desc: "A sports analytics project that consumes football data through APIs and transforms it into statistical insights, comparisons, and visual analysis of Premier League performance.",
+    tags: ["Python", "APIs", "Data Analysis", "Visualisation"],
+    github: "https://github.com/Chethiya-Bandara/Premier_League_Analysis",
   },
-  {
-    title: "TaskForge (Under progress)",
-    desc: "Team collaboration platform containing kanban boards and task tracking",
-    tags: ["Express.js", "React", "Postman API Testing"],
-    github: "https://github.com/Chethiya-Bandara/TaskForge"
-  }
 ];
 
 const Projects = () => {
+  const scrollRef = useRef(null);
+
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollButtons = () => {
+    const container = scrollRef.current;
+
+    if (!container) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+
+    setCanScrollLeft(scrollLeft > 10);
+
+    setCanScrollRight(
+      scrollLeft + clientWidth < scrollWidth - 10
+    );
+  };
+
+  useEffect(() => {
+    const container = scrollRef.current;
+
+    if (!container) return;
+
+    updateScrollButtons();
+
+    container.addEventListener("scroll", updateScrollButtons);
+    window.addEventListener("resize", updateScrollButtons);
+
+    return () => {
+      container.removeEventListener("scroll", updateScrollButtons);
+      window.removeEventListener("resize", updateScrollButtons);
+    };
+  }, []);
+  const scrollProjects = (direction) => {
+    const container = scrollRef.current;
+
+    if (!container) return;
+
+    const scrollAmount = container.clientWidth * 0.72;
+
+    container.scrollBy({
+      left: direction === "right" ? scrollAmount : -scrollAmount,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      const target = event.target;
+
+      const isTyping =
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement ||
+        target instanceof HTMLSelectElement ||
+        target?.isContentEditable;
+
+      if (isTyping) return;
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        scrollProjects("left");
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        scrollProjects("right");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
-    <section 
-      id="projects" 
-      // Changed base to pure black to anchor the void theme, increased vertical padding
-      className="relative py-32 px-8 bg-black overflow-hidden"
+    <section
+      id="projects"
+      className="
+        relative
+        py-32
+        px-6
+        md:px-8
+        overflow-hidden
+        bg-[#070a12]
+      "
     >
-      {/* --- CREATIVE BACKGROUND START --- */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* 1. The Data Grid: Subtle dotted pattern representing data points */}
-        <div 
-          className="absolute inset-0 opacity-[0.15]"
+
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Deep page background */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.12),transparent_35%),radial-gradient(circle_at_80%_75%,rgba(139,92,246,0.14),transparent_35%),linear-gradient(to_bottom,#070a12,#0a0d16)]
+          "
+        />
+
+        {/* Grid */}
+        <div
+          className="absolute inset-0 opacity-[0.06]"
           style={{
-            backgroundImage: 'radial-gradient(circle at center, #ffffff 1px, transparent 1px)',
-            backgroundSize: '24px 24px'
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px",
           }}
         />
 
-        {/* 2. Top Left Aurora (Blue) */}
-        <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-blue-600/10 blur-[120px] mix-blend-screen" />
+        {/* Blue glow */}
+        <div
+          className="
+            absolute
+            top-[-15%]
+            left-[-10%]
+            w-[500px]
+            h-[500px]
+            rounded-full
+            bg-blue-600/10
+            blur-[140px]
+          "
+        />
 
-        {/* 3. Bottom Right Aurora (Purple) */}
-        <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-purple-600/10 blur-[120px] mix-blend-screen" />
-        
-        {/* 4. Vignette mask to fade out the edges seamlessly into the black void */}
-        <div className="absolute inset-0 bg-black/40 [mask-image:radial-gradient(circle_at_center,transparent_0%,black_100%)]" />
+        {/* Purple glow */}
+        <div
+          className="
+            absolute
+            bottom-[-20%]
+            right-[-10%]
+            w-[600px]
+            h-[600px]
+            rounded-full
+            bg-purple-600/10
+            blur-[160px]
+          "
+        />
+
+        {/* Vignette */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[radial-gradient(circle_at_center,transparent_35%,rgba(3,5,10,0.75)_100%)]
+          "
+        />
       </div>
-      {/* --- CREATIVE BACKGROUND END --- */}
 
-      {/* Added relative and z-10 to ensure content floats above the background */}
-      <div className="max-w-6xl mx-auto relative z-10">
-        
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="mb-10"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 tracking-tight">
-            My <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Projects</span>
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <h2
+                className="
+                  text-4xl
+                  md:text-5xl
+                  lg:text-6xl
+                  font-bold
+                  tracking-tight
+                  text-white
+                "
+              >
+                My{" "}
+                <span
+                  className="
+                    bg-gradient-to-r
+                    from-blue-400
+                    via-cyan-400
+                    to-purple-500
+                    bg-clip-text
+                    text-transparent
+                  "
+                >
+                  Projects
+                </span>
+              </h2>
+            </div>
+
+            {/* Navigation */}
+            <div className="flex items-center gap-3 shrink-0">
+              <button
+                type="button"
+                onClick={() => scrollProjects("left")}
+                disabled={!canScrollLeft}
+                aria-label="Scroll projects left"
+                className="
+                  group
+                  w-11
+                  h-11
+                  rounded-full
+                  border
+                  border-white/10
+                  bg-white/[0.06]
+                  backdrop-blur-md
+                  flex
+                  items-center
+                  justify-center
+                  text-white/70
+                  transition-all
+                  duration-300
+                  hover:bg-blue-500/10
+                  hover:border-blue-400/30
+                  hover:text-blue-300
+                  disabled:opacity-20
+                  disabled:cursor-not-allowed
+                "
+              >
+                <span
+                  className="
+                    text-xl
+                    transition-transform
+                    duration-300
+                    group-hover:-translate-x-0.5
+                  "
+                >
+                  ←
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scrollProjects("right")}
+                disabled={!canScrollRight}
+                aria-label="Scroll projects right"
+                className="
+                  group
+                  w-11
+                  h-11
+                  rounded-full
+                  border
+                  border-white/10
+                  bg-white/[0.06]
+                  backdrop-blur-md
+                  flex
+                  items-center
+                  justify-center
+                  text-white/70
+                  transition-all
+                  duration-300
+                  hover:bg-purple-500/10
+                  hover:border-purple-400/30
+                  hover:text-purple-300
+                  disabled:opacity-20
+                  disabled:cursor-not-allowed
+                "
+              >
+                <span
+                  className="
+                    text-xl
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-0.5
+                  "
+                >
+                  →
+                </span>
+              </button>
+            </div>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((p, i) => (
-            <BorderGlow 
-              key={i}
-              className="p-8 h-full flex flex-col backdrop-blur-sm" // Added backdrop-blur for glass effect against the orbs
-              backgroundColor="rgba(8, 8, 8, 0.7)" // Made slightly transparent
-              borderRadius={16}
-              colors={['#3b82f6', '#8b5cf6', '#0ea5e9']}
-              edgeSensitivity={40}
-            >
-              <div className="flex-grow">
-                <h3 className="text-xl font-semibold text-white mb-3">{p.title}</h3>
-                <p className="text-white/60 text-sm mb-6 leading-relaxed">
-                  {p.desc}
-                </p>
+        <div
+          className="
+            relative
+            rounded-[28px]
+            border
+            border-white/[0.08]
+            bg-[#0c1220]/80
+            backdrop-blur-xl
+            shadow-[0_20px_80px_rgba(0,0,0,0.3)]
+            overflow-hidden
+          "
+        >
+          {/* Top border glow */}
+          <div
+            className="
+              absolute
+              top-0
+              left-0
+              right-0
+              h-px
+              bg-gradient-to-r
+              from-transparent
+              via-blue-400/30
+              to-transparent
+              pointer-events-none
+              z-20
+            "
+          />
 
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {p.tags.map(tag => (
-                    <motion.span 
-                      key={tag}
-                      whileHover={{ y: -2, backgroundColor: "rgba(59, 130, 246, 0.2)" }}
-                      className="text-[10px] uppercase tracking-widest bg-blue-500/10 text-blue-400 px-2 py-1 rounded border border-blue-500/20 transition-colors"
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
+          {/* Inner glow */}
+          <div
+            className="
+              absolute
+              top-1/2
+              left-1/2
+              -translate-x-1/2
+              -translate-y-1/2
+              w-[80%]
+              h-[70%]
+              rounded-full
+              bg-blue-500/[0.025]
+              blur-[100px]
+              pointer-events-none
+            "
+          />
 
-              <a 
-                href={p.github} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="mt-auto flex items-center justify-center w-full py-3 rounded-lg bg-white/5 hover:bg-white/10 text-white text-[10px] uppercase tracking-[0.2em] font-bold transition-all border border-white/10 hover:border-blue-500/50"
-              >
-                View on Github
-              </a>
-            </BorderGlow>
-          ))}
-
-          <BorderGlow 
-            className="p-8 h-full flex flex-col border border-dashed border-white/10 backdrop-blur-sm"
-            backgroundColor="rgba(0, 0, 0, 0.4)"
-            borderRadius={16}
-            colors={['#1e293b', '#334155']}
-            edgeSensitivity={20}
+          {/* Keyboard hint */}
+          <div
+            className="
+              absolute
+              top-5
+              right-6
+              z-30
+              hidden
+              md:flex
+              items-center
+              gap-2
+              text-[9px]
+              uppercase
+              tracking-[0.2em]
+              text-white/50
+              pointer-events-none
+            "
           >
-            <div className="flex-grow flex flex-col justify-center items-center text-center py-12">
-              <div className="w-12 h-12 mb-6 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                <motion.span 
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  className="text-blue-500 text-xl"
+            <span>You can use</span>
+
+            <kbd
+              className="
+                px-2
+                py-1
+                rounded-md
+                border
+                border-white/10
+                bg-white/[0.04]
+                text-white/35
+                font-sans
+                normal-case
+              "
+            >
+              ←
+            </kbd>
+
+            <kbd
+              className="
+                px-2
+                py-1
+                rounded-md
+                border
+                border-white/10
+                bg-white/[0.04]
+                text-white/35
+                font-sans
+                normal-case
+              "
+            >
+              →
+            </kbd>
+
+            <span>keys to navigate too!</span>
+          </div>
+
+          {/* Scroll area */}
+          <div
+            ref={scrollRef}
+            className="
+              relative
+              flex
+              gap-6
+              overflow-x-auto
+              overflow-y-hidden
+              scroll-smooth
+              snap-x
+              snap-mandatory
+              px-0
+              py-8
+              pt-16
+              [scrollbar-width:none]
+              [-ms-overflow-style:none]
+            "
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            {/* Left spacer */}
+            <div
+              className="flex-none w-8 md:w-12"
+              aria-hidden="true"
+            />
+
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{
+                  once: true,
+                  amount: 0.15,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.06,
+                }}
+                whileHover={{
+                  y: -6,
+                  scale: 1.01,
+                  boxShadow:
+                    "0 18px 45px rgba(59,130,246,0.12)",
+                }}
+                className="
+                  relative
+                  flex-none
+                  w-[88%]
+                  sm:w-[65%]
+                  md:w-[48%]
+                  lg:w-[36%]
+                  snap-start
+                  rounded-[18px]
+                  transition-shadow
+                  duration-300
+                "
+              >
+                {/* Featured badge */}
+                {project.featured && (
+                  <div
+                    className="
+                      absolute
+                      top-4
+                      right-4
+                      z-30
+                      flex
+                      items-center
+                      gap-1.5
+                      px-3
+                      py-1.5
+                      rounded-full
+                      bg-amber-400/[0.12]
+                      border
+                      border-amber-300/30
+                      text-amber-300
+                      text-[9px]
+                      font-bold
+                      uppercase
+                      tracking-[0.18em]
+                      shadow-[0_0_18px_rgba(251,191,36,0.08)]
+                      backdrop-blur-md
+                    "
+                  >
+                    <span className="text-[10px]">
+                      ★
+                    </span>
+
+                    Featured
+                  </div>
+                )}
+
+                <BorderGlow
+                  className="
+                    p-7
+                    h-[430px]
+                    flex
+                    flex-col
+                    backdrop-blur-xl
+                  "
+                  backgroundColor="rgba(8, 13, 24, 0.88)"
+                  borderRadius={18}
+                  colors={[
+                    "#3b82f6",
+                    "#06b6d4",
+                    "#8b5cf6",
+                  ]}
+                  edgeSensitivity={35}
                 >
-                  +
-                </motion.span>
-              </div>
-              <h3 className="text-xl font-semibold text-white/80 mb-2">Many more to come!</h3>
-              <p className="text-white/40 text-sm leading-relaxed max-w-[200px]">
-                This is just the start! Currently architecting new solutions in the void.
-              </p>
-            </div>
-            
-            <div className="mt-auto w-full py-3 rounded-lg bg-white/[0.02] text-white/20 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/5 text-center cursor-default">
-              System Loading...
-            </div>
-          </BorderGlow>
+                  <div className="flex-grow">
+                    {/* Project number */}
+                    <div className="flex items-center justify-between mb-7">
+                      <span
+                        className="
+                          text-[10px]
+                          uppercase
+                          tracking-[0.25em]
+                          text-white/25
+                        "
+                      >
+                        Project{" "}
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <div
+                        className="
+                          w-2
+                          h-2
+                          rounded-full
+                          bg-cyan-400
+                          shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                        "
+                      />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-2xl font-semibold text-white mb-4">
+                      {project.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-sm text-white/50 leading-7 mb-7">
+                      {project.desc}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <motion.span
+                          key={tag}
+                          whileHover={{ y: -2 }}
+                          className="
+                            text-[10px]
+                            uppercase
+                            tracking-widest
+                            bg-white/[0.04]
+                            text-white/55
+                            px-2.5
+                            py-1.5
+                            rounded-md
+                            border
+                            border-white/10
+                            transition-all
+                            hover:bg-blue-500/10
+                            hover:text-blue-300
+                            hover:border-blue-500/30
+                          "
+                        >
+                          {tag}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* GitHub */}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      mt-8
+                      flex
+                      items-center
+                      justify-center
+                      gap-2
+                      w-full
+                      py-3.5
+                      rounded-xl
+                      bg-gradient-to-r
+                      from-white/[0.06]
+                      to-white/[0.03]
+                      hover:from-blue-500/15
+                      hover:to-purple-500/15
+                      text-white/80
+                      hover:text-white
+                      text-[10px]
+                      uppercase
+                      tracking-[0.22em]
+                      font-semibold
+                      border
+                      border-white/10
+                      hover:border-blue-400/30
+                      transition-all
+                      duration-300
+                    "
+                  >
+                    View on GitHub
+
+                    <span className="text-sm">
+                      ↗
+                    </span>
+                  </a>
+                </BorderGlow>
+              </motion.div>
+            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{
+                once: true,
+                amount: 0.15,
+              }}
+              transition={{
+                duration: 0.5,
+              }}
+              className="
+                flex-none
+                w-[88%]
+                sm:w-[65%]
+                md:w-[48%]
+                lg:w-[36%]
+                snap-start
+              "
+            >
+              <BorderGlow
+                className="
+                  p-7
+                  h-[430px]
+                  flex
+                  flex-col
+                  backdrop-blur-xl
+                "
+                backgroundColor="rgba(8, 11, 18, 0.55)"
+                borderRadius={18}
+                colors={[
+                  "#1e293b",
+                  "#334155",
+                  "#475569",
+                ]}
+                edgeSensitivity={20}
+              >
+                <div
+                  className="
+                    flex-grow
+                    flex
+                    flex-col
+                    items-center
+                    justify-center
+                    text-center
+                    px-5
+                  "
+                >
+                  <div
+                    className="
+                      w-16
+                      h-16
+                      rounded-full
+                      border
+                      border-white/10
+                      bg-white/[0.03]
+                      flex
+                      items-center
+                      justify-center
+                      mb-7
+                    "
+                  >
+                    <motion.span
+                      animate={{
+                        rotate: 360,
+                      }}
+                      transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                      className="
+                        text-2xl
+                        text-blue-400
+                        font-light
+                      "
+                    >
+                      +
+                    </motion.span>
+                  </div>
+
+                  <h3 className="text-2xl font-semibold text-white/80 mb-3">
+                    More in the pipeline
+                  </h3>
+
+                  <p className="text-sm leading-7 text-white/35 max-w-xs">
+                    New systems, experiments and ideas are currently
+                    being built. This portfolio is still expanding.
+                  </p>
+                </div>
+
+                <div
+                  className="
+                    mt-auto
+                    w-full
+                    py-3.5
+                    rounded-xl
+                    bg-white/[0.02]
+                    text-white/20
+                    text-[10px]
+                    uppercase
+                    tracking-[0.22em]
+                    font-bold
+                    border
+                    border-white/5
+                    text-center
+                  "
+                >
+                  Building...
+                </div>
+              </BorderGlow>
+            </motion.div>
+          </div>
+
+          {/* Bottom fade */}
+          <div
+            className="
+              absolute
+              bottom-0
+              left-0
+              right-0
+              h-6
+              bg-gradient-to-t
+              from-[#0c1220]/70
+              to-transparent
+              pointer-events-none
+            "
+          />
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="mt-7 flex items-center justify-center gap-3">
+          <span className="h-px w-10 bg-gradient-to-r from-transparent to-white/10" />
+
+          <span
+            className="
+              text-[9px]
+              uppercase
+              tracking-[0.3em]
+              text-white/20
+            "
+          >
+            Drag or use arrow keys
+          </span>
+
+          <span className="h-px w-10 bg-gradient-to-l from-transparent to-white/10" />
         </div>
       </div>
+
+      <style jsx>{`
+        div::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 };
