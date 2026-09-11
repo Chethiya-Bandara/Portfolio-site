@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 import BorderGlow from "./BorderGlow";
 
 const projects = [
@@ -66,7 +67,8 @@ const projects = [
     title: "Premier League Analysis",
     desc: "A sports analytics project that consumes football data through APIs and transforms it into statistical insights, comparisons, and visual analysis of Premier League performance.",
     tags: ["Python", "APIs", "Data Analysis", "Visualisation"],
-    github: "https://github.com/Chethiya-Bandara/Premier_League_Analysis",
+    github:
+      "https://github.com/Chethiya-Bandara/Premier_League_Analysis",
   },
 ];
 
@@ -105,6 +107,7 @@ const Projects = () => {
       window.removeEventListener("resize", updateScrollButtons);
     };
   }, []);
+
   const scrollProjects = (direction) => {
     const container = scrollRef.current;
 
@@ -117,6 +120,7 @@ const Projects = () => {
       behavior: "smooth",
     });
   };
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       const target = event.target;
@@ -159,6 +163,9 @@ const Projects = () => {
         bg-[#070a12]
       "
     >
+      {/* =====================================================
+          BACKGROUND
+      ====================================================== */}
 
       <div className="absolute inset-0 pointer-events-none">
         {/* Deep page background */}
@@ -219,6 +226,10 @@ const Projects = () => {
           "
         />
       </div>
+
+      {/* =====================================================
+          CONTENT
+      ====================================================== */}
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* HEADER */}
@@ -339,6 +350,10 @@ const Projects = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* =====================================================
+            PROJECT CAROUSEL
+        ====================================================== */}
 
         <div
           className="
@@ -469,6 +484,10 @@ const Projects = () => {
               className="flex-none w-8 md:w-12"
               aria-hidden="true"
             />
+
+            {/* =================================================
+                PROJECT CARDS
+            ================================================== */}
 
             {projects.map((project, index) => (
               <motion.div
@@ -624,11 +643,12 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
+                      group
                       mt-8
                       flex
                       items-center
                       justify-center
-                      gap-2
+                      gap-2.5
                       w-full
                       py-3.5
                       rounded-xl
@@ -650,15 +670,39 @@ const Projects = () => {
                       duration-300
                     "
                   >
-                    View on GitHub
+                    <FaGithub
+                      size={16}
+                      className="
+                        text-white/40
+                        group-hover:text-cyan-300
+                        transition-colors
+                        duration-300
+                      "
+                    />
 
-                    <span className="text-sm">
+                    <span>View on GitHub</span>
+
+                    <span
+                      className="
+                        text-white/30
+                        group-hover:text-cyan-300
+                        transition-all
+                        duration-300
+                        group-hover:translate-x-0.5
+                        group-hover:-translate-y-0.5
+                      "
+                    >
                       ↗
                     </span>
                   </a>
                 </BorderGlow>
               </motion.div>
             ))}
+
+            {/* =================================================
+                COMING SOON
+            ================================================== */}
+
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -807,6 +851,7 @@ const Projects = () => {
         </div>
       </div>
 
+      {/* Hide scrollbar in WebKit browsers */}
       <style jsx>{`
         div::-webkit-scrollbar {
           display: none;

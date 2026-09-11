@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Connect = () => {
   const socials = [
@@ -7,6 +8,8 @@ const Connect = () => {
       name: "GitHub",
       label: "Projects & Code",
       url: "https://github.com/Chethiya-Bandara",
+      icon: FaGithub,
+      iconColor: "group-hover:text-white",
       hover:
         "hover:text-white hover:border-white/20 hover:bg-white/[0.04]",
     },
@@ -14,6 +17,8 @@ const Connect = () => {
       name: "LinkedIn",
       label: "Professional Network",
       url: "https://www.linkedin.com/in/chethiya-bandara-845017330/",
+      icon: FaLinkedin,
+      iconColor: "group-hover:text-blue-400",
       hover:
         "hover:text-blue-300 hover:border-blue-400/25 hover:bg-blue-500/[0.05]",
     },
@@ -21,6 +26,8 @@ const Connect = () => {
       name: "Email",
       label: "Let's talk",
       url: "mailto:Chethiyabandara2004@gmail.com",
+      icon: FaEnvelope,
+      iconColor: "group-hover:text-cyan-400",
       hover:
         "hover:text-cyan-300 hover:border-cyan-400/25 hover:bg-cyan-500/[0.05]",
     },
@@ -253,110 +260,112 @@ const Connect = () => {
             mt-20
           "
         >
-          {socials.map((social) => (
-            <motion.a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{
-                y: -5,
-              }}
-              whileTap={{
-                scale: 0.98,
-              }}
-              className={`
-                group
-                flex
-                items-center
-                gap-4
-                p-5
-                rounded-2xl
-                bg-white/[0.025]
-                backdrop-blur-xl
-                border
-                border-white/[0.08]
-                text-white/50
-                transition-all
-                duration-300
-                ${social.hover}
-              `}
-            >
-              {/* Text */}
-              <div className="flex-1 text-left">
-                <p
-                  className="
-                    text-xs
-                    uppercase
-                    tracking-[0.2em]
-                    font-semibold
-                    text-white/70
-                    group-hover:text-current
-                    transition-colors
-                  "
-                >
-                  {social.name}
-                </p>
+          {socials.map((social) => {
+            const Icon = social.icon;
 
-                <p className="text-[11px] text-white/25 mt-1">
-                  {social.label}
-                </p>
-              </div>
-
-              {/* Arrow */}
-              <ArrowUpRight
-                size={17}
-                className="
-                  text-white/20
-                  group-hover:text-current
-                  opacity-0
-                  group-hover:opacity-100
+            return (
+              <motion.a
+                key={social.name}
+                href={social.url}
+                target={social.name === "Email" ? undefined : "_blank"}
+                rel={
+                  social.name === "Email"
+                    ? undefined
+                    : "noopener noreferrer"
+                }
+                whileHover={{
+                  y: -5,
+                }}
+                whileTap={{
+                  scale: 0.98,
+                }}
+                className={`
+                  group
+                  flex
+                  items-center
+                  gap-4
+                  p-5
+                  rounded-2xl
+                  bg-white/[0.025]
+                  backdrop-blur-xl
+                  border
+                  border-white/[0.08]
+                  text-white/50
                   transition-all
                   duration-300
-                  transform
-                  group-hover:translate-x-0.5
-                  group-hover:-translate-y-0.5
-                "
-              />
-            </motion.a>
-          ))}
+                  ${social.hover}
+                `}
+              >
+                {/* Brand Icon */}
+                <div
+                  className="
+                    w-11
+                    h-11
+                    shrink-0
+                    rounded-xl
+                    bg-white/[0.04]
+                    border
+                    border-white/[0.08]
+                    flex
+                    items-center
+                    justify-center
+                    transition-all
+                    duration-300
+                    group-hover:bg-white/[0.06]
+                    group-hover:border-white/[0.12]
+                  "
+                >
+                  <Icon
+                    size={19}
+                    className={`
+                      text-white/40
+                      transition-all
+                      duration-300
+                      ${social.iconColor}
+                    `}
+                  />
+                </div>
+
+                {/* Text */}
+                <div className="flex-1 text-left">
+                  <p
+                    className="
+                      text-xs
+                      uppercase
+                      tracking-[0.2em]
+                      font-semibold
+                      text-white/70
+                      group-hover:text-current
+                      transition-colors
+                    "
+                  >
+                    {social.name}
+                  </p>
+
+                  <p className="text-[11px] text-white/25 mt-1">
+                    {social.label}
+                  </p>
+                </div>
+
+                {/* Arrow */}
+                <ArrowUpRight
+                  size={17}
+                  className="
+                    text-white/20
+                    group-hover:text-current
+                    opacity-0
+                    group-hover:opacity-100
+                    transition-all
+                    duration-300
+                    transform
+                    group-hover:translate-x-0.5
+                    group-hover:-translate-y-0.5
+                  "
+                />
+              </motion.a>
+            );
+          })}
         </motion.div>
-
-        {/* Divider */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="
-            max-w-3xl
-            mx-auto
-            mt-28
-            h-px
-            bg-gradient-to-r
-            from-transparent
-            via-white/10
-            to-transparent
-          "
-        />
-
-        {/* Footer */}
-        <div className="mt-10 flex flex-col items-center gap-3">
-          <p
-            className="
-              text-[9px]
-              uppercase
-              tracking-[0.5em]
-              text-white/20
-            "
-          >
-            Chethiya Bandara
-          </p>
-
-          <p className="text-[10px] text-white/10">
-            © {new Date().getFullYear()} • Built with React & curiosity
-          </p>
-        </div>
       </div>
     </section>
   );

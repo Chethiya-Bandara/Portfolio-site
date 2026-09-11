@@ -2,63 +2,185 @@ import { motion } from "framer-motion";
 import BorderGlow from "./BorderGlow";
 import LetterGlitch from "./LetterGlitch";
 
+import {
+  FaPython,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaDocker,
+  FaGithub,
+  FaUnity,
+  FaServer,
+  FaDatabase,
+  FaCode,
+} from "react-icons/fa";
+
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFlutter,
+  SiVite,
+  SiFastapi,
+  SiExpress,
+  SiPostgresql,
+  SiSupabase,
+  SiDotnet,
+  SiMysql,
+  SiRender,
+  SiPostman,
+  SiJira,
+  SiNetlify,
+} from "react-icons/si";
+
 const TechStack = () => {
   const stack = [
     {
       number: "01",
       category: "Languages & Logic",
-      description: "Core languages used for application development, data processing and problem solving.",
+      description:
+        "Core languages used for application development, data processing and problem solving.",
       skills: [
-        "Python",
-        "JavaScript",
-        "TypeScript",
-        "SQL",
-        "C#",
-        "C++",
+        {
+          name: "Python",
+          icon: FaPython,
+        },
+        {
+          name: "JavaScript",
+          icon: FaJs,
+        },
+        {
+          name: "TypeScript",
+          icon: SiTypescript,
+        },
+        {
+          name: "SQL",
+          icon: FaDatabase,
+        },
+        {
+          name: "C#",
+          icon: SiDotnet,
+        },
+        {
+          name: "C++",
+          icon: FaCode,
+        },
       ],
     },
     {
       number: "02",
       category: "Frontend & Interface",
-      description: "Tools for building responsive, interactive and modern user experiences.",
+      description:
+        "Tools for building responsive, interactive and modern user experiences.",
       skills: [
-        "React",
-        "Next.js",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Flutter",
-        "Vite",
+        {
+          name: "React",
+          icon: FaReact,
+        },
+        {
+          name: "Next.js",
+          icon: SiNextdotjs,
+        },
+        {
+          name: "Tailwind CSS",
+          icon: SiTailwindcss,
+        },
+        {
+          name: "Framer Motion",
+          icon: FaReact,
+        },
+        {
+          name: "Flutter",
+          icon: SiFlutter,
+        },
+        {
+          name: "Vite",
+          icon: SiVite,
+        },
       ],
     },
     {
       number: "03",
       category: "Backend & Systems",
-      description: "Technologies used to design APIs, databases and scalable application backends.",
+      description:
+        "Technologies used to design APIs, databases and scalable application backends.",
       skills: [
-        "FastAPI",
-        "Node.js",
-        "Express.js",
-        "PostgreSQL",
-        "Supabase",
-        "ASP.NET MVC",
-        "MySQL",
-        "Render",
+        {
+          name: "FastAPI",
+          icon: SiFastapi,
+        },
+        {
+          name: "Node.js",
+          icon: FaNodeJs,
+        },
+        {
+          name: "Express.js",
+          icon: SiExpress,
+        },
+        {
+          name: "PostgreSQL",
+          icon: SiPostgresql,
+        },
+        {
+          name: "Supabase",
+          icon: SiSupabase,
+        },
+        {
+          name: "ASP.NET MVC",
+          icon: SiDotnet,
+        },
+        {
+          name: "MySQL",
+          icon: SiMysql,
+        },
+        {
+          name: "Render",
+          icon: SiRender,
+        },
       ],
     },
     {
       number: "04",
       category: "Tools & Architecture",
-      description: "Development tools and engineering concepts used to build and ship complete systems.",
+      description:
+        "Development tools and engineering concepts used to build and ship complete systems.",
       skills: [
-        "Postman",
-        "GitHub",
-        "Docker",
-        "Jira",
-        "Unity",
-        "REST APIs",
-        "System Design",
-        "MVC Architecture",
-        "Netlify",
+        {
+          name: "Postman",
+          icon: SiPostman,
+        },
+        {
+          name: "GitHub",
+          icon: FaGithub,
+        },
+        {
+          name: "Docker",
+          icon: FaDocker,
+        },
+        {
+          name: "Jira",
+          icon: SiJira,
+        },
+        {
+          name: "Unity",
+          icon: FaUnity,
+        },
+        {
+          name: "REST APIs",
+          icon: FaServer,
+        },
+        {
+          name: "System Design",
+          icon: FaServer,
+        },
+        {
+          name: "MVC Architecture",
+          icon: FaCode,
+        },
+        {
+          name: "Netlify",
+          icon: SiNetlify,
+        },
       ],
     },
   ];
@@ -153,13 +275,28 @@ const TechStack = () => {
         />
       </div>
 
+      {/* =========================================================
+          CONTENT
+      ========================================================== */}
+
       <div className="w-full max-w-7xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
         >
+          {/* Heading */}
           <h2
             className="
               text-4xl
@@ -210,8 +347,14 @@ const TechStack = () => {
             {stack.map((group, idx) => (
               <motion.div
                 key={group.category}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{
+                  opacity: 0,
+                  y: 25,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
                 viewport={{
                   once: true,
                   amount: 0.15,
@@ -293,68 +436,102 @@ const TechStack = () => {
 
                   {/* Skills */}
                   <div className="flex flex-wrap gap-2.5 mt-auto">
-                    {group.skills.map((skill, skillIndex) => (
-                      <motion.span
-                        key={skill}
-                        whileHover={{
-                          y: -3,
-                          scale: 1.02,
-                        }}
-                        transition={{
-                          duration: 0.2,
-                        }}
-                        className="
-                          group/skill
-                          relative
-                          px-3.5
-                          py-2
-                          rounded-lg
-                          text-xs
-                          md:text-sm
-                          text-white/65
-                          border
-                          border-white/[0.08]
-                          bg-white/[0.025]
-                          hover:bg-blue-500/[0.08]
-                          hover:text-cyan-300
-                          hover:border-cyan-400/20
-                          transition-all
-                          duration-300
-                          cursor-default
-                        "
-                      >
-                        {/* Hover glow */}
-                        <span
-                          className="
-                            absolute
-                            inset-0
-                            rounded-lg
-                            opacity-0
-                            group-hover/skill:opacity-100
-                            transition-opacity
-                            bg-gradient-to-r
-                            from-blue-500/[0.08]
-                            to-violet-500/[0.08]
-                          "
-                        />
+                    {group.skills.map((skill) => {
+                      const Icon = skill.icon;
 
-                        <span className="relative z-10">
-                          {skill}
-                        </span>
-                      </motion.span>
-                    ))}
+                      return (
+                        <motion.span
+                          key={skill.name}
+                          whileHover={{
+                            y: -3,
+                            scale: 1.02,
+                          }}
+                          transition={{
+                            duration: 0.2,
+                          }}
+                          className="
+                            group/skill
+                            relative
+                            flex
+                            items-center
+                            gap-2
+                            px-3.5
+                            py-2
+                            rounded-lg
+                            text-xs
+                            md:text-sm
+                            text-white/65
+                            border
+                            border-white/[0.08]
+                            bg-white/[0.025]
+                            hover:bg-blue-500/[0.08]
+                            hover:text-cyan-300
+                            hover:border-cyan-400/20
+                            transition-all
+                            duration-300
+                            cursor-default
+                          "
+                        >
+                          {/* Hover glow */}
+                          <span
+                            className="
+                              absolute
+                              inset-0
+                              rounded-lg
+                              opacity-0
+                              group-hover/skill:opacity-100
+                              transition-opacity
+                              bg-gradient-to-r
+                              from-blue-500/[0.08]
+                              to-violet-500/[0.08]
+                            "
+                          />
+
+                          {/* Icon */}
+                          <Icon
+                            size={16}
+                            className="
+                              relative
+                              z-10
+                              shrink-0
+                              text-white/40
+                              group-hover/skill:text-cyan-300
+                              transition-colors
+                              duration-300
+                            "
+                          />
+
+                          {/* Name */}
+                          <span className="relative z-10">
+                            {skill.name}
+                          </span>
+                        </motion.span>
+                      );
+                    })}
                   </div>
                 </BorderGlow>
               </motion.div>
             ))}
           </div>
 
-          {/* Bottom tech strip */}
+          {/* =====================================================
+              BOTTOM TECH STRIP
+          ====================================================== */}
+
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.7 }}
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              delay: 0.5,
+              duration: 0.7,
+            }}
             className="
               mt-10
               flex

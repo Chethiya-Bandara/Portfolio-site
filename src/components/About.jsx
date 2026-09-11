@@ -1,110 +1,509 @@
 import { motion } from "framer-motion";
 import BorderGlow from "./BorderGlow";
 
+const focusAreas = [
+  {
+    title: "Backend & Architecture",
+    description:
+      "Designing APIs, data models, authentication flows, and scalable backend systems with a strong focus on structure and reliability.",
+    color: "blue",
+  },
+  {
+    title: "Machine Learning",
+    description:
+      "Building and integrating ML solutions that turn data into practical insights, from computer vision to predictive analytics.",
+    color: "violet",
+  },
+  {
+    title: "Full-Stack Engineering",
+    description:
+      "Connecting backend systems and databases to responsive interfaces while keeping the overall product coherent and maintainable.",
+    color: "cyan",
+  },
+];
+
+const technologies = [
+  "React",
+  "Next.js",
+  "FastAPI",
+  "Python",
+  "PostgreSQL",
+  "Machine Learning",
+];
+
 const About = () => {
   return (
-    <section 
-      id="about" 
-      className="relative min-h-screen flex items-center py-24 px-8 border-t border-white/5 overflow-hidden"
-      style={{
-        background: 'radial-gradient(circle at 70% 50%, #0a192f 0%, #050505 100%)'
-      }}
+    <section
+      id="about"
+      className="
+        relative
+        min-h-screen
+        flex
+        items-center
+        py-32
+        md:py-40
+        px-6
+        md:px-8
+        border-t
+        border-white/[0.06]
+        overflow-hidden
+        bg-[#070a12]
+      "
     >
-      {/* Subtle Noise Texture */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.12] brightness-50 pointer-events-none"></div>
+      {/* =====================================================
+          BACKGROUND
+      ====================================================== */}
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Base gradient */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[radial-gradient(circle_at_75%_35%,rgba(37,99,235,0.12),transparent_32%),radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.08),transparent_30%),linear-gradient(to_bottom,#070a12,#080b14)]
+          "
+        />
+
+        {/* Grid */}
+        <div
+          className="
+            absolute
+            inset-0
+            opacity-[0.045]
+          "
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        {/* Blue glow */}
+        <div
+          className="
+            absolute
+            top-[10%]
+            right-[-8%]
+            w-[550px]
+            h-[550px]
+            rounded-full
+            bg-blue-600/[0.07]
+            blur-[150px]
+          "
+        />
+
+        {/* Violet glow */}
+        <div
+          className="
+            absolute
+            bottom-[-15%]
+            left-[-10%]
+            w-[500px]
+            h-[500px]
+            rounded-full
+            bg-violet-600/[0.06]
+            blur-[150px]
+          "
+        />
+
+        {/* Vignette */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[radial-gradient(circle_at_center,transparent_28%,rgba(3,5,12,0.8)_100%)]
+          "
+        />
+      </div>
+
+      {/* =====================================================
+          CONTENT
+      ====================================================== */}
+
+      <div className="relative z-10 w-full max-w-6xl mx-auto">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
+          className="mb-16"
         >
-          {/* Header */}
-          <div className="mb-16">
-            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-4">
-              Obsessive <span className="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent">Execution.</span>
-            </h2>
-            <div className="h-[1px] w-40 bg-gradient-to-r from-blue-600 to-transparent"></div>
+          <div className="flex items-center gap-3 mb-6">
+            <span className="w-8 h-px bg-gradient-to-r from-transparent to-blue-400/70" />
+
+            <span
+              className="
+                text-[10px]
+                uppercase
+                tracking-[0.35em]
+                text-blue-300/60
+              "
+            >
+              About Me
+            </span>
+
+            <span className="w-8 h-px bg-gradient-to-l from-transparent to-blue-400/70" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            
-            {/* The Narrative */}
-            <div className="lg:col-span-7 space-y-8 text-slate-300">
-              <div className="space-y-6 text-zinc-400">
-  <p className="text-xl md:text-2xl text-white font-medium leading-snug">
-    I don't just participate in systems; I optimize them.
-  </p>
-  
-  <p className="text-lg leading-relaxed">
-    Throughout my academic journey, from O-Levels and A-Levels to my final year of university, I’ve treated every challenge as an optimization problem. I operate on the belief that rigorous, disciplined engineering always yields superior, predictable outcomes.
-  </p>
-  
-  <p className="text-lg leading-relaxed">
-    I apply this mindset directly to full-stack architecture and machine learning. I anchor technical structures from the trenches, working closely with teams to bridge the gap between complex codebases and seamless user experiences. 
-  </p>
+          <h2
+            className="
+              text-5xl
+              sm:text-6xl
+              md:text-7xl
+              lg:text-8xl
+              font-bold
+              tracking-[-0.055em]
+              leading-[0.9]
+              text-white
+            "
+          >
+            Built around
+            <br />
+            <span
+              className="
+                bg-gradient-to-r
+                from-cyan-300
+                via-blue-400
+                to-violet-500
+                bg-clip-text
+                text-transparent
+              "
+            >
+              execution.
+            </span>
+          </h2>
 
-  <p className="text-lg leading-relaxed">
-    From designing <span className="text-white underline decoration-blue-500/30 underline-offset-4">high-concurrency healthcare backends</span> to training predictive models, I eliminate architectural friction to build digital infrastructure that scales.
-  </p>
-</div>
+          <p
+            className="
+              mt-7
+              max-w-2xl
+              text-base
+              md:text-lg
+              leading-8
+              text-white/40
+            "
+          >
+            I enjoy taking complex technical problems, breaking them down,
+            and turning them into systems that are practical, reliable, and
+            genuinely useful.
+          </p>
+        </motion.div>
 
-              {/* The "Manifesto" list */}
-              <div className="space-y-4 pt-6 border-l-2 border-blue-500/20 pl-6">
-                <p className="italic text-slate-400">
-                  Working side-by-side with my team, I safeguard the underlying architecture so our creative vision can flow without disruption.
-                </p>
-              </div>
+        {/* =====================================================
+            MAIN GRID
+        ====================================================== */}
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          {/* =================================================
+              LEFT: STORY
+          ================================================== */}
+
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="lg:col-span-7"
+          >
+            <div className="space-y-7">
+              <p
+                className="
+                  text-xl
+                  md:text-2xl
+                  leading-snug
+                  font-medium
+                  text-white/90
+                "
+              >
+                I don't just build features. I think about the systems
+                underneath them.
+              </p>
+
+              <p
+                className="
+                  text-base
+                  md:text-lg
+                  leading-8
+                  text-white/45
+                "
+              >
+                I'm a Computer Science undergraduate specialising in Software
+                Engineering, with a strong interest in full-stack development,
+                backend architecture, and machine learning.
+              </p>
+
+              <p
+                className="
+                  text-base
+                  md:text-lg
+                  leading-8
+                  text-white/45
+                "
+              >
+                Through university projects, team-based development, and my
+                own portfolio work, I've built applications across healthcare,
+                finance, project management, computer vision, and data
+                analytics.
+              </p>
+
+              <p
+                className="
+                  text-base
+                  md:text-lg
+                  leading-8
+                  text-white/45
+                "
+              >
+                I especially enjoy working where different pieces have to
+                connect properly: APIs with databases, backend logic with
+                user interfaces, and machine learning with real-world
+                applications.
+              </p>
             </div>
 
-            {/* The Technical Card */}
-            <div className="lg:col-span-5">
-              <BorderGlow 
-                className="p-[1px]"
-                backgroundColor="transparent"
-                borderRadius={24}
-                colors={['#3b82f6', '#8b5cf6']}
+            {/* Philosophy */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="
+                relative
+                mt-10
+                pl-6
+                border-l-2
+                border-blue-500/20
+              "
+            >
+              <div
+                className="
+                  absolute
+                  left-[-2px]
+                  top-0
+                  bottom-0
+                  w-px
+                  bg-gradient-to-b
+                  from-blue-400
+                  via-cyan-400/40
+                  to-transparent
+                "
+              />
+
+              <p
+                className="
+                  text-sm
+                  md:text-base
+                  leading-7
+                  italic
+                  text-white/45
+                "
               >
-                <div className="bg-[#050505]/90 backdrop-blur-3xl p-10 rounded-[23px] border border-white/5 h-full">
-                  <h3 className="text-sm font-mono text-blue-500 uppercase tracking-[0.3em] mb-8">System Focus</h3>
-                  
-                  <div className="space-y-10">
-                    <div>
-                      <h4 className="text-white font-bold mb-3 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                        Architectural Integrity
-                      </h4>
-                      <p className="text-sm text-slate-400 leading-relaxed">
-                        Structuring scalable, high-performance backends using FastAPI and modern cloud infrastructure.
-                      </p>
-                    </div>
+                "The goal is not simply to make something work. It's to
+                understand why it works, where it can break, and how to make
+                it better."
+              </p>
+            </motion.div>
+          </motion.div>
 
-                    <div>
-                      <h4 className="text-white font-bold mb-3 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
-                        Applied Intelligence
-                      </h4>
-                      <p className="text-sm text-slate-400 leading-relaxed">
-                        Integrating ML models into production environments to turn static data into predictive insights.
-                      </p>
-                    </div>
+          {/* =================================================
+              RIGHT: ENGINEERING FOCUS
+          ================================================== */}
 
-                    <div className="pt-6 border-t border-white/5">
-                      <div className="flex flex-wrap gap-2">
-                        {['React', 'Next.js', 'FastAPI', 'ML/DL'].map((tech) => (
-                          <span key={tech} className="text-[10px] font-mono px-3 py-1 bg-white/5 border border-white/10 rounded text-slate-400 uppercase tracking-tighter">
-                            {tech}
-                          </span>
-                        ))}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="lg:col-span-5"
+          >
+            <BorderGlow
+              className="p-[1px]"
+              backgroundColor="transparent"
+              borderRadius={24}
+              colors={[
+                "#3b82f6",
+                "#06b6d4",
+                "#8b5cf6",
+              ]}
+              edgeSensitivity={35}
+            >
+              <div
+                className="
+                  rounded-[23px]
+                  bg-[#080d18]/90
+                  backdrop-blur-2xl
+                  border
+                  border-white/[0.05]
+                  p-7
+                  md:p-8
+                "
+              >
+                {/* Card header */}
+                <div className="flex items-center justify-between mb-8">
+                  <div>
+                    <span
+                      className="
+                        text-[10px]
+                        uppercase
+                        tracking-[0.3em]
+                        text-blue-300/60
+                      "
+                    >
+                      Engineering Focus
+                    </span>
+
+                    <h3 className="mt-2 text-xl font-semibold text-white">
+                      What I like building
+                    </h3>
+                  </div>
+
+                  <div
+                    className="
+                      w-2
+                      h-2
+                      rounded-full
+                      bg-cyan-400
+                      shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                    "
+                  />
+                </div>
+
+                {/* Focus areas */}
+                <div className="space-y-6">
+                  {focusAreas.map((area, index) => (
+                    <motion.div
+                      key={area.title}
+                      initial={{
+                        opacity: 0,
+                        y: 15,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      viewport={{
+                        once: true,
+                        amount: 0.3,
+                      }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.1 + index * 0.1,
+                      }}
+                      whileHover={{ x: 3 }}
+                      className="group"
+                    >
+                      <div className="flex items-start gap-3">
+                        <span
+                          className={`
+                            mt-2
+                            w-1.5
+                            h-1.5
+                            rounded-full
+                            shrink-0
+                            ${
+                              area.color === "blue"
+                                ? "bg-blue-400 shadow-[0_0_9px_rgba(96,165,250,0.7)]"
+                                : area.color === "violet"
+                                ? "bg-violet-400 shadow-[0_0_9px_rgba(167,139,250,0.7)]"
+                                : "bg-cyan-400 shadow-[0_0_9px_rgba(34,211,238,0.7)]"
+                            }
+                          `}
+                        />
+
+                        <div>
+                          <h4 className="text-sm md:text-base font-semibold text-white/85 group-hover:text-white transition-colors">
+                            {area.title}
+                          </h4>
+
+                          <p className="mt-2 text-sm leading-6 text-white/35">
+                            {area.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Divider */}
+                <div className="my-8 h-px bg-white/[0.06]" />
+
+                {/* Technologies */}
+                <div>
+                  <span
+                    className="
+                      text-[9px]
+                      uppercase
+                      tracking-[0.25em]
+                      text-white/25
+                    "
+                  >
+                    Core stack
+                  </span>
+
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="
+                          text-[10px]
+                          uppercase
+                          tracking-[0.16em]
+                          px-3
+                          py-2
+                          rounded-lg
+                          bg-white/[0.035]
+                          border
+                          border-white/[0.08]
+                          text-white/45
+                          hover:text-blue-300
+                          hover:border-blue-400/20
+                          hover:bg-blue-500/[0.05]
+                          transition-all
+                          duration-300
+                        "
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </BorderGlow>
-            </div>
+              </div>
+            </BorderGlow>
+          </motion.div>
+        </div>
 
-          </div>
+        {/* Bottom markers */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="
+            flex
+            flex-wrap
+            gap-x-8
+            gap-y-3
+            mt-16
+            text-[9px]
+            uppercase
+            tracking-[0.25em]
+            text-white/20
+          "
+        >
+          <span>Software Engineering</span>
+          <span>•</span>
+          <span>Full-Stack Development</span>
+          <span>•</span>
+          <span>Machine Learning</span>
         </motion.div>
       </div>
     </section>

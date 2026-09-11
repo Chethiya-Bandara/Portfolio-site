@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import PixelBlast from "./PixelBlast";
+import { FaGithub } from "react-icons/fa";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -279,6 +280,7 @@ const Hero = () => {
               gap-2
             "
           >
+            <FaGithub size={18} />
             <span>GitHub</span>
 
             <span
