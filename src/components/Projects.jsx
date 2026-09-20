@@ -46,6 +46,14 @@ const projects = [
     featured: true,
   },
   {
+    title: "Bladebound",
+    desc: "A 2d Side scroller game built with Unity, featuring multiple difficulty levels and a simple interface designed around responsive gameplay.",
+    tags: ["Unity", "C#", "Game Development"],
+    game: true,
+    github:
+      "https://chethiya-bandara.itch.io/bladebound",
+  },
+  {
     title: "TumorDetect.AI",
     desc: "A computer vision application using convolutional neural networks to classify brain MRI scans and assist with tumour detection through an interactive Streamlit interface.",
     tags: [
@@ -69,12 +77,6 @@ const projects = [
     tags: ["Python", "APIs", "Data Analysis", "Visualisation"],
     github:
       "https://github.com/Chethiya-Bandara/Premier_League_Analysis",
-  },
-  {
-    title: "Bladebound",
-    desc: "A 2d Side scroller game built with Unity, featuring multiple difficulty levels and a simple interface designed around responsive gameplay.",
-    tags: ["Unity", "C#", "Game Development"],
-    game: true,
   },
 ];
 
@@ -662,7 +664,8 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
-
+                  
+                  {!project.game && (
                   <a
                     href={project.github}
                     target="_blank"
@@ -720,6 +723,58 @@ const Projects = () => {
                       ↗
                     </span>
                   </a>
+                  )}
+
+                  {project.game && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      group
+                      mt-8
+                      flex
+                      items-center
+                      justify-center
+                      gap-2.5
+                      w-full
+                      py-3.5
+                      rounded-xl
+                      bg-gradient-to-r
+                      from-white/[0.06]
+                      to-white/[0.03]
+                      hover:from-blue-500/15
+                      hover:to-purple-500/15
+                      text-white/80
+                      hover:text-white
+                      text-[10px]
+                      uppercase
+                      tracking-[0.22em]
+                      font-semibold
+                      border
+                      border-white/10
+                      hover:border-blue-400/30
+                      transition-all
+                      duration-300
+                    "
+                  >
+
+                    <span>Play Demo Game</span>
+
+                    <span
+                      className="
+                        text-white/30
+                        group-hover:text-cyan-300
+                        transition-all
+                        duration-300
+                        group-hover:translate-x-0.5
+                        group-hover:-translate-y-0.5
+                      "
+                    >
+                      ↗
+                    </span>
+                  </a>
+                  )}
                 </BorderGlow>
               </motion.div>
             ))}
