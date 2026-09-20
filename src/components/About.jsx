@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import BorderGlow from "./BorderGlow";
+import PixelBlast from "./PixelBlast";
 
 const focusAreas = [
   {
@@ -54,30 +55,54 @@ const About = () => {
           BACKGROUND
       ====================================================== */}
 
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 z-0">
         {/* Base gradient */}
         <div
           className="
             absolute
             inset-0
-            bg-[radial-gradient(circle_at_75%_35%,rgba(37,99,235,0.12),transparent_32%),radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.08),transparent_30%),linear-gradient(to_bottom,#070a12,#080b14)]
+            bg-[radial-gradient(circle_at_75%_35%,rgba(37,99,235,0.16),transparent_34%),radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.10),transparent_32%),linear-gradient(to_bottom,#070a12,#080d18)]
+            pointer-events-none
           "
         />
 
-        {/* Grid */}
-        <div
+        {/* Interactive sci-fi field */}
+        <div className="absolute inset-0 opacity-55">
+          <PixelBlast
+            variant="diamond"
+            pixelSize={4}
+            color="#38bdf8"
+            patternScale={2.4}
+            patternDensity={0.82}
+            pixelSizeJitter={0.18}
+            enableRipples
+            rippleSpeed={0.32}
+            rippleThickness={0.08}
+            rippleIntensityScale={1.15}
+            liquid
+            liquidStrength={0.07}
+            liquidRadius={1.1}
+            liquidWobbleSpeed={3.5}
+            speed={0.22}
+            edgeFade={0.42}
+            transparent
+          />
+        </div>
+
+        {/* Scanning overlay */}
+        <motion.div
           className="
             absolute
-            inset-0
-            opacity-[0.045]
+            inset-x-0
+            h-32
+            bg-gradient-to-b
+            from-transparent
+            via-cyan-300/[0.035]
+            to-transparent
+            pointer-events-none
           "
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)
-            `,
-            backgroundSize: "60px 60px",
-          }}
+          animate={{ top: ["-15%", "100%"] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
         />
 
         {/* Blue glow */}
@@ -91,6 +116,7 @@ const About = () => {
             rounded-full
             bg-blue-600/[0.07]
             blur-[150px]
+            pointer-events-none
           "
         />
 
@@ -105,6 +131,7 @@ const About = () => {
             rounded-full
             bg-violet-600/[0.06]
             blur-[150px]
+            pointer-events-none
           "
         />
 
@@ -114,6 +141,7 @@ const About = () => {
             absolute
             inset-0
             bg-[radial-gradient(circle_at_center,transparent_28%,rgba(3,5,12,0.8)_100%)]
+            pointer-events-none
           "
         />
       </div>
@@ -183,7 +211,7 @@ const About = () => {
               text-base
               md:text-lg
               leading-8
-              text-white/40
+              text-white
             "
           >
             I enjoy taking complex technical problems, breaking them down,
@@ -192,14 +220,7 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* =====================================================
-            MAIN GRID
-        ====================================================== */}
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          {/* =================================================
-              LEFT: STORY
-          ================================================== */}
 
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -230,7 +251,7 @@ const About = () => {
                   text-base
                   md:text-lg
                   leading-8
-                  text-white/45
+                  text-white/90
                 "
               >
                 I'm a Computer Science undergraduate specialising in Software
@@ -243,7 +264,7 @@ const About = () => {
                   text-base
                   md:text-lg
                   leading-8
-                  text-white/45
+                  text-white/90
                 "
               >
                 Through university projects, team-based development, and my
@@ -257,7 +278,7 @@ const About = () => {
                   text-base
                   md:text-lg
                   leading-8
-                  text-white/45
+                  text-white/90
                 "
               >
                 I especially enjoy working where different pieces have to
@@ -301,7 +322,7 @@ const About = () => {
                   md:text-base
                   leading-7
                   italic
-                  text-white/45
+                  text-white/90
                 "
               >
                 "The goal is not simply to make something work. It's to

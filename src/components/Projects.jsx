@@ -22,7 +22,7 @@ const projects = [
     desc: "A full-stack personal finance platform for tracking transactions, analysing spending patterns, and generating financial insights with real-time dashboards and Prophet-based forecasting.",
     tags: [
       "Next.js",
-      "Prophet ML",
+      "React.js",
       "Tailwind",
       "FastAPI",
       "Supabase",
@@ -358,13 +358,35 @@ const Projects = () => {
             relative
             rounded-[28px]
             border
-            border-white/[0.08]
-            bg-[#0c1220]/80
+            border-blue-300/[0.14]
+            bg-[#10192a]
             backdrop-blur-xl
-            shadow-[0_20px_80px_rgba(0,0,0,0.3)]
+            shadow-[0_24px_90px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.04)]
             overflow-hidden
           "
         >
+          {/* Layered navy panel background */}
+          <div
+            className="
+              absolute
+              inset-0
+              bg-[radial-gradient(circle_at_12%_15%,rgba(37,99,235,0.16),transparent_32%),radial-gradient(circle_at_88%_85%,rgba(8,145,178,0.10),transparent_34%),linear-gradient(135deg,#121d31_0%,#0d1627_52%,#101a2d_100%)]
+              pointer-events-none
+            "
+          />
+
+          {/* Subtle texture separates the panel from the cards */}
+          <div
+            className="
+              absolute
+              inset-0
+              opacity-[0.12]
+              bg-[linear-gradient(rgba(147,197,253,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(147,197,253,0.08)_1px,transparent_1px)]
+              [background-size:44px_44px]
+              pointer-events-none
+            "
+          />
+
           {/* Top border glow */}
           <div
             className="
@@ -375,7 +397,7 @@ const Projects = () => {
               h-px
               bg-gradient-to-r
               from-transparent
-              via-blue-400/30
+              via-cyan-300/55
               to-transparent
               pointer-events-none
               z-20
@@ -393,7 +415,7 @@ const Projects = () => {
               w-[80%]
               h-[70%]
               rounded-full
-              bg-blue-500/[0.025]
+              bg-blue-400/[0.07]
               blur-[100px]
               pointer-events-none
             "
@@ -477,12 +499,6 @@ const Projects = () => {
               msOverflowStyle: "none",
             }}
           >
-            {/* Left spacer */}
-            <div
-              className="flex-none w-8 md:w-12"
-              aria-hidden="true"
-            />
-
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -509,6 +525,10 @@ const Projects = () => {
                   sm:w-[65%]
                   md:w-[48%]
                   lg:w-[36%]
+                  first:ml-[6%]
+                  sm:first:ml-[17.5%]
+                  md:first:ml-[26%]
+                  lg:first:ml-[32%]
                   snap-start
                   rounded-[18px]
                   transition-shadow
