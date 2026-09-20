@@ -70,6 +70,12 @@ const projects = [
     github:
       "https://github.com/Chethiya-Bandara/Premier_League_Analysis",
   },
+  {
+    title: "Bladebound",
+    desc: "A 2d Side scroller game built with Unity, featuring multiple difficulty levels and a simple interface designed around responsive gameplay.",
+    tags: ["Unity", "C#", "Game Development"],
+    game: true,
+  },
 ];
 
 const Projects = () => {
@@ -163,9 +169,6 @@ const Projects = () => {
         bg-[#070a12]
       "
     >
-      {/* =====================================================
-          BACKGROUND
-      ====================================================== */}
 
       <div className="absolute inset-0 pointer-events-none">
         {/* Deep page background */}
@@ -226,10 +229,6 @@ const Projects = () => {
           "
         />
       </div>
-
-      {/* =====================================================
-          CONTENT
-      ====================================================== */}
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* HEADER */}
@@ -351,9 +350,6 @@ const Projects = () => {
           </div>
         </motion.div>
 
-        {/* =====================================================
-            PROJECT CAROUSEL
-        ====================================================== */}
 
         <div
           className="
@@ -485,10 +481,6 @@ const Projects = () => {
               aria-hidden="true"
             />
 
-            {/* =================================================
-                PROJECT CARDS
-            ================================================== */}
-
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -552,6 +544,40 @@ const Projects = () => {
                     </span>
 
                     Featured
+                  </div>
+                )}
+
+                {/* Game badge */}
+                {project.game && (
+                  <div
+                    className="
+                      absolute
+                      top-4
+                      right-4
+                      z-30
+                      flex
+                      items-center
+                      gap-1.5
+                      px-3
+                      py-1.5
+                      rounded-full
+                      bg-emerald-400/[0.12]
+                      border
+                      border-emerald-300/30
+                      text-emerald-300
+                      text-[9px]
+                      font-bold
+                      uppercase
+                      tracking-[0.18em]
+                      shadow-[0_0_18px_rgba(251,191,36,0.08)]
+                      backdrop-blur-md
+                    "
+                  >
+                    <span className="text-[10px]">
+                      ★
+                    </span>
+
+                    Game
                   </div>
                 )}
 
@@ -637,7 +663,6 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* GitHub */}
                   <a
                     href={project.github}
                     target="_blank"
@@ -698,10 +723,6 @@ const Projects = () => {
                 </BorderGlow>
               </motion.div>
             ))}
-
-            {/* =================================================
-                COMING SOON
-            ================================================== */}
 
             <motion.div
               initial={{ opacity: 0, y: 25 }}
