@@ -68,6 +68,20 @@ const projects = [
     github: "https://chethiya-bandara.itch.io/bladebound",
   },
   {
+    title: "Gravity Flip",
+    desc: "An extension of Bladebound, featuring multiple difficulty levels, responsive gameplay and a newly introduced gravity flip mode.",
+    tags: ["Unity", "C#", "Game Development"],
+    game: true,
+    github: "https://chethiya-bandara.itch.io/gravity-flip",
+  },
+  {
+    title: "Noughts & Crosses",
+    desc: "A lightweight mobile tic-tac-toe game built with Flutter, featuring multiple difficulty levels and a simple interface designed around responsive gameplay.",
+    tags: ["Flutter", "Dart", "Game Development"],
+    game: true,
+    github: "https://github.com/Chethiya-Bandara/noughts-and-crosses",
+  },
+  {
     title: "Sonora",
     desc: "A lightweight desktop Spotify companion that displays real-time playback, track details, album artwork, and media controls in a compact customizable popup.",
     tags: [
@@ -91,19 +105,6 @@ const projects = [
       "Computer Vision",
     ],
     github: "https://github.com/Chethiya-Bandara/TumorDetect-AI",
-  },
-  {
-    title: "Noughts & Crosses",
-    desc: "A lightweight mobile tic-tac-toe game built with Flutter, featuring multiple difficulty levels and a simple interface designed around responsive gameplay.",
-    tags: ["Flutter", "Dart", "Game Development"],
-    github: "https://github.com/Chethiya-Bandara/noughts-and-crosses",
-  },
-  {
-    title: "Premier League Analysis",
-    desc: "A sports analytics project that consumes football data through APIs and transforms it into statistical insights, comparisons, and visual analysis of Premier League performance.",
-    tags: ["Python", "APIs", "Data Analysis", "Visualisation"],
-    github:
-      "https://github.com/Chethiya-Bandara/Premier_League_Analysis",
   },
 ];
 
