@@ -453,50 +453,6 @@ const About = () => {
                     </motion.div>
                   ))}
                 </div>
-
-                {/* Divider */}
-                <div className="my-8 h-px bg-white/[0.06]" />
-
-                {/* Technologies */}
-                <div>
-                  <span
-                    className="
-                      text-[9px]
-                      uppercase
-                      tracking-[0.25em]
-                      text-white/25
-                    "
-                  >
-                    Core stack
-                  </span>
-
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="
-                          text-[10px]
-                          uppercase
-                          tracking-[0.16em]
-                          px-3
-                          py-2
-                          rounded-lg
-                          bg-white/[0.035]
-                          border
-                          border-white/[0.08]
-                          text-white/45
-                          hover:text-blue-300
-                          hover:border-blue-400/20
-                          hover:bg-blue-500/[0.05]
-                          transition-all
-                          duration-300
-                        "
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </BorderGlow>
           </motion.div>
