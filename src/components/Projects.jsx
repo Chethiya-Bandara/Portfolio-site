@@ -6,13 +6,13 @@ import BorderGlow from "./BorderGlow";
 const projects = [
   {
     title: "MediConnect",
-    desc: "A healthcare management platform developed for pharmacies and hospitals, combining role-based access, patient and medication management, secure APIs, and AI-assisted functionality.",
+    desc: "Worked as the lead backend and database engineer in a group of 5 developers to develop a healthcare management platform for pharmacies and hospitals, combining role-based access, patient and medication management, secure APIs.",
     tags: [
       "React",
       "FastAPI",
       "PostgreSQL",
       "Supabase",
-      "Gemini Chatbot",
+      "Chatbot",
     ],
     github: "https://github.com/Mohamed-Ruzaik/MediConnect",
     featured: true,
@@ -40,10 +40,10 @@ const projects = [
       "PostgreSQL",
       "Prisma",
       "JWT",
-      "Zod",
     ],
     github: "https://github.com/Chethiya-Bandara/TaskForge",
     featured: true,
+    development: true,
   },
   {
     title: "Altera",
@@ -57,6 +57,7 @@ const projects = [
       "Migrations",
     ],
     github: "https://github.com/Chethiya-Bandara/Altera",
+    featured: true,
     development: true,
   },
   {
@@ -64,8 +65,7 @@ const projects = [
     desc: "A 2d Side scroller game built with Unity, featuring multiple difficulty levels and a simple interface designed around responsive gameplay.",
     tags: ["Unity", "C#", "Game Development"],
     game: true,
-    github:
-      "https://chethiya-bandara.itch.io/bladebound",
+    github: "https://chethiya-bandara.itch.io/bladebound",
   },
   {
     title: "Sonora",
@@ -198,7 +198,6 @@ const Projects = () => {
         bg-[#070a12]
       "
     >
-
       <div className="absolute inset-0 pointer-events-none">
         {/* Deep page background */}
         <div
@@ -378,7 +377,6 @@ const Projects = () => {
             </div>
           </div>
         </motion.div>
-
 
         <div
           className="
@@ -562,107 +560,99 @@ const Projects = () => {
                   duration-300
                 "
               >
-                {/* Featured badge */}
-                {project.featured && (
-                  <div
-                    className="
-                      absolute
-                      top-4
-                      right-4
-                      z-30
-                      flex
-                      items-center
-                      gap-1.5
-                      px-3
-                      py-1.5
-                      rounded-full
-                      bg-amber-400/[0.12]
-                      border
-                      border-amber-300/30
-                      text-amber-300
-                      text-[9px]
-                      font-bold
-                      uppercase
-                      tracking-[0.18em]
-                      shadow-[0_0_18px_rgba(251,191,36,0.08)]
-                      backdrop-blur-md
-                    "
-                  >
-                    <span className="text-[10px]">
-                      ★
-                    </span>
+                {/* Project badges */}
+                <div className="absolute top-4 right-4 z-30 flex items-center gap-2">
+                  {/* Featured badge */}
+                  {project.featured && (
+                    <div
+                      className="
+                        flex
+                        items-center
+                        gap-1.5
+                        px-3
+                        py-1.5
+                        rounded-full
+                        bg-amber-400/[0.12]
+                        border
+                        border-amber-300/30
+                        text-amber-300
+                        text-[9px]
+                        font-bold
+                        uppercase
+                        tracking-[0.18em]
+                        shadow-[0_0_18px_rgba(251,191,36,0.08)]
+                        backdrop-blur-md
+                      "
+                    >
+                      <span className="text-[10px]">
+                        ★
+                      </span>
 
-                    Featured
-                  </div>
-                )}
+                      Featured
+                    </div>
+                  )}
 
-                {/* Development badge */}
-                {project.development && (
-                  <div
-                    className="
-                      absolute
-                      top-4
-                      right-4
-                      z-30
-                      flex
-                      items-center
-                      gap-1.5
-                      px-3
-                      py-1.5
-                      rounded-full
-                      bg-cyan-400/[0.12]
-                      border
-                      border-cyan-300/30
-                      text-cyan-300
-                      text-[9px]
-                      font-bold
-                      uppercase
-                      tracking-[0.18em]
-                      shadow-[0_0_18px_rgba(34,211,238,0.10)]
-                      backdrop-blur-md
-                    "
-                  >
-                    <span className="text-[10px]">
-                      ★
-                    </span>
+                  {/* Development badge */}
+                  {project.development && (
+                    <div
+                      className="
+                        flex
+                        items-center
+                        gap-1.5
+                        px-3
+                        py-1.5
+                        rounded-full
+                        bg-cyan-400/[0.12]
+                        border
+                        border-cyan-300/30
+                        text-cyan-300
+                        text-[9px]
+                        font-bold
+                        uppercase
+                        tracking-[0.18em]
+                        shadow-[0_0_18px_rgba(34,211,238,0.10)]
+                        backdrop-blur-md
+                      "
+                    >
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-50" />
+                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                      </span>
 
-                    Under Development
-                  </div>
-                )}
+                      In Development
+                    </div>
+                  )}
 
-                {/* Game badge */}
-                {project.game && (
-                  <div
-                    className="
-                      absolute
-                      top-4
-                      right-4
-                      z-30
-                      flex
-                      items-center
-                      gap-1.5
-                      px-3
-                      py-1.5
-                      rounded-full
-                      bg-emerald-400/[0.12]
-                      border
-                      border-emerald-300/30
-                      text-emerald-300
-                      text-[9px]
-                      font-bold
-                      uppercase
-                      tracking-[0.18em]
-                      shadow-[0_0_18px_rgba(251,191,36,0.08)]
-                      backdrop-blur-md
-                    "
-                  >
-                    <span className="text-[10px]">
-                      ★
-                    </span>
+                  {/* Game badge */}
+                  {project.game && (
+                    <div
+                      className="
+                        flex
+                        items-center
+                        gap-1.5
+                        px-3
+                        py-1.5
+                        rounded-full
+                        bg-emerald-400/[0.12]
+                        border
+                        border-emerald-300/30
+                        text-emerald-300
+                        text-[9px]
+                        font-bold
+                        uppercase
+                        tracking-[0.18em]
+                        shadow-[0_0_18px_rgba(251,191,36,0.08)]
+                        backdrop-blur-md
+                      "
+                    >
+                      <span className="text-[10px]">
+                        ★
+                      </span>
 
-                    Game
-                  </div>
-                )}
+                      Game
+                    </div>
+                  )}
+                </div>
 
                 <BorderGlow
                   className="
@@ -745,116 +735,115 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   {!project.game && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                      group
-                      mt-8
-                      flex
-                      items-center
-                      justify-center
-                      gap-2.5
-                      w-full
-                      py-3.5
-                      rounded-xl
-                      bg-gradient-to-r
-                      from-white/[0.06]
-                      to-white/[0.03]
-                      hover:from-blue-500/15
-                      hover:to-purple-500/15
-                      text-white/80
-                      hover:text-white
-                      text-[10px]
-                      uppercase
-                      tracking-[0.22em]
-                      font-semibold
-                      border
-                      border-white/10
-                      hover:border-blue-400/30
-                      transition-all
-                      duration-300
-                    "
-                  >
-                    <FaGithub
-                      size={16}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="
-                        text-white/40
-                        group-hover:text-cyan-300
-                        transition-colors
-                        duration-300
-                      "
-                    />
-
-                    <span>View on GitHub</span>
-
-                    <span
-                      className="
-                        text-white/30
-                        group-hover:text-cyan-300
+                        group
+                        mt-8
+                        flex
+                        items-center
+                        justify-center
+                        gap-2.5
+                        w-full
+                        py-3.5
+                        rounded-xl
+                        bg-gradient-to-r
+                        from-white/[0.06]
+                        to-white/[0.03]
+                        hover:from-blue-500/15
+                        hover:to-purple-500/15
+                        text-white/80
+                        hover:text-white
+                        text-[10px]
+                        uppercase
+                        tracking-[0.22em]
+                        font-semibold
+                        border
+                        border-white/10
+                        hover:border-blue-400/30
                         transition-all
                         duration-300
-                        group-hover:translate-x-0.5
-                        group-hover:-translate-y-0.5
                       "
                     >
-                      ↗
-                    </span>
-                  </a>
+                      <FaGithub
+                        size={16}
+                        className="
+                          text-white/40
+                          group-hover:text-cyan-300
+                          transition-colors
+                          duration-300
+                        "
+                      />
+
+                      <span>View on GitHub</span>
+
+                      <span
+                        className="
+                          text-white/30
+                          group-hover:text-cyan-300
+                          transition-all
+                          duration-300
+                          group-hover:translate-x-0.5
+                          group-hover:-translate-y-0.5
+                        "
+                      >
+                        ↗
+                      </span>
+                    </a>
                   )}
 
                   {project.game && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                      group
-                      mt-8
-                      flex
-                      items-center
-                      justify-center
-                      gap-2.5
-                      w-full
-                      py-3.5
-                      rounded-xl
-                      bg-gradient-to-r
-                      from-white/[0.06]
-                      to-white/[0.03]
-                      hover:from-blue-500/15
-                      hover:to-purple-500/15
-                      text-white/80
-                      hover:text-white
-                      text-[10px]
-                      uppercase
-                      tracking-[0.22em]
-                      font-semibold
-                      border
-                      border-white/10
-                      hover:border-blue-400/30
-                      transition-all
-                      duration-300
-                    "
-                  >
-
-                    <span>Play Demo Game</span>
-
-                    <span
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="
-                        text-white/30
-                        group-hover:text-cyan-300
+                        group
+                        mt-8
+                        flex
+                        items-center
+                        justify-center
+                        gap-2.5
+                        w-full
+                        py-3.5
+                        rounded-xl
+                        bg-gradient-to-r
+                        from-white/[0.06]
+                        to-white/[0.03]
+                        hover:from-blue-500/15
+                        hover:to-purple-500/15
+                        text-white/80
+                        hover:text-white
+                        text-[10px]
+                        uppercase
+                        tracking-[0.22em]
+                        font-semibold
+                        border
+                        border-white/10
+                        hover:border-blue-400/30
                         transition-all
                         duration-300
-                        group-hover:translate-x-0.5
-                        group-hover:-translate-y-0.5
                       "
                     >
-                      ↗
-                    </span>
-                  </a>
+                      <span>Play Demo Game</span>
+
+                      <span
+                        className="
+                          text-white/30
+                          group-hover:text-cyan-300
+                          transition-all
+                          duration-300
+                          group-hover:translate-x-0.5
+                          group-hover:-translate-y-0.5
+                        "
+                      >
+                        ↗
+                      </span>
+                    </a>
                   )}
                 </BorderGlow>
               </motion.div>
