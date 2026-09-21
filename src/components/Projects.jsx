@@ -46,12 +46,39 @@ const projects = [
     featured: true,
   },
   {
+    title: "Altera",
+    desc: "A backend-focused platform built with Go, featuring RESTful APIs, PostgreSQL persistence, database migrations, authentication, and a clean modular architecture.",
+    tags: [
+      "Go",
+      "PostgreSQL",
+      "REST API",
+      "Docker",
+      "JWT",
+      "Migrations",
+    ],
+    github: "https://github.com/Chethiya-Bandara/Altera",
+    development: true,
+  },
+  {
     title: "Bladebound",
     desc: "A 2d Side scroller game built with Unity, featuring multiple difficulty levels and a simple interface designed around responsive gameplay.",
     tags: ["Unity", "C#", "Game Development"],
     game: true,
     github:
       "https://chethiya-bandara.itch.io/bladebound",
+  },
+  {
+    title: "Sonora",
+    desc: "A lightweight desktop Spotify companion that displays real-time playback, track details, album artwork, and media controls in a compact customizable popup.",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tauri",
+      "Rust",
+      "Spotify API",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/Chethiya-Bandara/Sonora",
   },
   {
     title: "TumorDetect.AI",
@@ -566,6 +593,40 @@ const Projects = () => {
                     </span>
 
                     Featured
+                  </div>
+                )}
+
+                {/* Development badge */}
+                {project.development && (
+                  <div
+                    className="
+                      absolute
+                      top-4
+                      right-4
+                      z-30
+                      flex
+                      items-center
+                      gap-1.5
+                      px-3
+                      py-1.5
+                      rounded-full
+                      bg-cyan-400/[0.12]
+                      border
+                      border-cyan-300/30
+                      text-cyan-300
+                      text-[9px]
+                      font-bold
+                      uppercase
+                      tracking-[0.18em]
+                      shadow-[0_0_18px_rgba(34,211,238,0.10)]
+                      backdrop-blur-md
+                    "
+                  >
+                    <span className="text-[10px]">
+                      ★
+                    </span>
+
+                    Under Development
                   </div>
                 )}
 
