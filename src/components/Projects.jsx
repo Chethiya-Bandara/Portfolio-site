@@ -57,7 +57,6 @@ const projects = [
       "Migrations",
     ],
     github: "https://github.com/Chethiya-Bandara/Altera",
-    featured: true,
     development: true,
   },
   {
