@@ -1,36 +1,6 @@
 import { motion } from "framer-motion";
-import BorderGlow from "./BorderGlow";
-import PixelBlast from "./PixelBlast";
-
-const focusAreas = [
-  {
-    title: "Backend & Architecture",
-    description:
-      "Designing APIs, data models, authentication flows, and scalable backend systems with a strong focus on structure and reliability.",
-    color: "emerald",
-  },
-  {
-    title: "Machine Learning",
-    description:
-      "Building and integrating ML solutions that turn data into practical insights, from computer vision to predictive analytics.",
-    color: "lime",
-  },
-  {
-    title: "Full-Stack Engineering",
-    description:
-      "Connecting backend systems and databases to responsive interfaces while keeping the overall product coherent and maintainable.",
-    color: "green",
-  },
-];
-
-const technologies = [
-  "React",
-  "Next.js",
-  "FastAPI",
-  "Python",
-  "PostgreSQL",
-  "Machine Learning",
-];
+import GlowCursor from "./GlowCursor";
+import ReflectiveCard from "./ReflectiveCard";
 
 const About = () => {
   return (
@@ -64,45 +34,6 @@ const About = () => {
             bg-[radial-gradient(circle_at_75%_35%,rgba(5,150,105,0.16),transparent_34%),radial-gradient(circle_at_20%_80%,rgba(101,163,13,0.10),transparent_32%),linear-gradient(to_bottom,#06120d,#091a12)]
             pointer-events-none
           "
-        />
-
-        {/* Interactive sci-fi field */}
-        <div className="absolute inset-0 opacity-55">
-          <PixelBlast
-            variant="diamond"
-            pixelSize={4}
-            color="#4ade80"
-            patternScale={2.4}
-            patternDensity={0.82}
-            pixelSizeJitter={0.18}
-            enableRipples
-            rippleSpeed={0.32}
-            rippleThickness={0.08}
-            rippleIntensityScale={1.15}
-            liquid
-            liquidStrength={0.07}
-            liquidRadius={1.1}
-            liquidWobbleSpeed={3.5}
-            speed={0.22}
-            edgeFade={0.42}
-            transparent
-          />
-        </div>
-
-        {/* Scanning overlay */}
-        <motion.div
-          className="
-            absolute
-            inset-x-0
-            h-32
-            bg-gradient-to-b
-            from-transparent
-            via-green-300/[0.035]
-            to-transparent
-            pointer-events-none
-          "
-          animate={{ top: ["-15%", "100%"] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
         />
 
         {/* Emerald glow */}
@@ -144,6 +75,10 @@ const About = () => {
             pointer-events-none
           "
         />
+      </div>
+
+      <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden="true">
+        <GlowCursor color="#4ade80" secondaryColor="#059669" intensity={1.3} trailWidth={3} linger={1.4} glow={1.2} quality="medium" clickBurst />
       </div>
 
       {/* =====================================================
@@ -211,7 +146,7 @@ const About = () => {
               text-base
               md:text-lg
               leading-8
-              text-white
+              text-white/80
             "
           >
             I enjoy taking complex technical problems, breaking them down,
@@ -239,7 +174,7 @@ const About = () => {
                   md:text-2xl
                   leading-snug
                   font-medium
-                  text-white/90
+                  text-white/80
                 "
               >
                 I don't just build features. I think about the systems
@@ -251,7 +186,7 @@ const About = () => {
                   text-base
                   md:text-lg
                   leading-8
-                  text-white/90
+                  text-white/80
                 "
               >
                 I'm a Computer Science undergraduate specialising in Software
@@ -264,7 +199,7 @@ const About = () => {
                   text-base
                   md:text-lg
                   leading-8
-                  text-white/90
+                  text-white/80
                 "
               >
                 Through university projects, team-based development, and my
@@ -278,7 +213,7 @@ const About = () => {
                   text-base
                   md:text-lg
                   leading-8
-                  text-white/90
+                  text-white/80
                 "
               >
                 I especially enjoy working where different pieces have to
@@ -322,7 +257,7 @@ const About = () => {
                   md:text-base
                   leading-7
                   italic
-                  text-white/90
+                  text-white/80
                 "
               >
                 "The goal is not simply to make something work. It's to
@@ -332,9 +267,6 @@ const About = () => {
             </motion.div>
           </motion.div>
 
-          {/* =================================================
-              RIGHT: ENGINEERING FOCUS
-          ================================================== */}
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -346,115 +278,25 @@ const About = () => {
             }}
             className="lg:col-span-5"
           >
-            <BorderGlow
-              className="p-[1px]"
-              backgroundColor="transparent"
-              borderRadius={24}
-              colors={[
-                "#10b981",
-                "#4ade80",
-                "#a3e635",
-              ]}
-              edgeSensitivity={35}
+            <ReflectiveCard
+              width="100%"
+              height={500}
+              tint="#86efac"
+              glare={0.45}
+              enableTilt={false}
+              className="max-w-md mx-auto"
             >
-              <div
-                className="
-                  rounded-[23px]
-                  bg-[#091a12]/90
-                  backdrop-blur-2xl
-                  border
-                  border-white/[0.05]
-                  p-7
-                  md:p-8
-                "
-              >
-                {/* Card header */}
-                <div className="flex items-center justify-between mb-8">
-                  <div>
-                    <span
-                      className="
-                        text-[10px]
-                        uppercase
-                        tracking-[0.3em]
-                        text-emerald-300/60
-                      "
-                    >
-                      Engineering Focus
-                    </span>
-
-                    <h3 className="mt-2 text-xl font-semibold text-white">
-                      What I like building
-                    </h3>
-                  </div>
-
-                  <div
-                    className="
-                      w-2
-                      h-2
-                      rounded-full
-                      bg-green-400
-                      shadow-[0_0_12px_rgba(74,222,128,0.8)]
-                    "
-                  />
+              <div className="flex h-full flex-col">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-green-200/75">About me</span>
+                <div className="mt-5 min-h-0 flex-1 overflow-hidden rounded-2xl border border-white/15">
+                  <img src="/Profile_Pic_defined.jpeg" alt="Chethiya Bandara" className="h-full w-full object-cover object-center" />
                 </div>
-
-                {/* Focus areas */}
-                <div className="space-y-6">
-                  {focusAreas.map((area, index) => (
-                    <motion.div
-                      key={area.title}
-                      initial={{
-                        opacity: 0,
-                        y: 15,
-                      }}
-                      whileInView={{
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      viewport={{
-                        once: true,
-                        amount: 0.3,
-                      }}
-                      transition={{
-                        duration: 0.5,
-                        delay: 0.1 + index * 0.1,
-                      }}
-                      whileHover={{ x: 3 }}
-                      className="group"
-                    >
-                      <div className="flex items-start gap-3">
-                        <span
-                          className={`
-                            mt-2
-                            w-1.5
-                            h-1.5
-                            rounded-full
-                            shrink-0
-                            ${
-                              area.color === "emerald"
-                                ? "bg-emerald-400 shadow-[0_0_9px_rgba(52,211,153,0.7)]"
-                                : area.color === "lime"
-                                ? "bg-lime-400 shadow-[0_0_9px_rgba(163,230,53,0.7)]"
-                                : "bg-green-400 shadow-[0_0_9px_rgba(74,222,128,0.7)]"
-                            }
-                          `}
-                        />
-
-                        <div>
-                          <h4 className="text-sm md:text-base font-semibold text-white/85 group-hover:text-white transition-colors">
-                            {area.title}
-                          </h4>
-
-                          <p className="mt-2 text-sm leading-6 text-white/35">
-                            {area.description}
-                          </p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
+                <div className="pt-5">
+                  <h3 className="text-xl font-semibold text-white">Chethiya Bandara</h3>
+                  <p className="mt-1 text-sm text-white/65">Software Engineer</p>
                 </div>
               </div>
-            </BorderGlow>
+            </ReflectiveCard>
           </motion.div>
         </div>
 
