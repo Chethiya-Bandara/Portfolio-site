@@ -20,31 +20,21 @@ const Navbar = () => {
       .map((item) => document.getElementById(item.id))
       .filter(Boolean);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSections = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort(
-            (a, b) =>
-              b.intersectionRatio - a.intersectionRatio
-          );
+    const updateActiveSection = () => {
+      const anchor = window.innerHeight * 0.35;
+      const current = sections.find((section) => {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= anchor && rect.bottom > anchor;
+      });
+      if (current) setActiveSection(current.id);
+    };
 
-        if (visibleSections.length > 0) {
-          setActiveSection(visibleSections[0].target.id);
-        }
-      },
-      {
-        rootMargin: "-30% 0px -50% 0px",
-        threshold: [0.1, 0.25, 0.5],
-      }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
     return () => {
-      sections.forEach((section) =>
-        observer.unobserve(section)
-      );
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
     };
   }, []);
 

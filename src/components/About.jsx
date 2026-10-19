@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import GlowCursor from "./GlowCursor";
 import ReflectiveCard from "./ReflectiveCard";
 
 const About = () => {
@@ -75,10 +74,6 @@ const About = () => {
             pointer-events-none
           "
         />
-      </div>
-
-      <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden="true">
-        <GlowCursor color="#4ade80" secondaryColor="#059669" intensity={1.3} trailWidth={3} linger={1.4} glow={1.2} quality="medium" clickBurst />
       </div>
 
       {/* =====================================================
