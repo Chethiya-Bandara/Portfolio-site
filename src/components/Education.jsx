@@ -1,3 +1,4 @@
+import GhostFibers from "./GhostFibers";
 import { motion } from "framer-motion";
 
 const Education = () => {
@@ -110,6 +111,18 @@ const Education = () => {
             inset-0
             bg-[radial-gradient(circle_at_center,transparent_30%,rgba(2,10,6,0.8)_100%)]
           "
+        />
+      </div>
+
+      <div className="absolute inset-0 pointer-events-none opacity-60" aria-hidden="true">
+        <GhostFibers
+          glowColor="#10b981"
+          lineColor="#bbf7d0"
+          secondaryColor="#65a30d"
+          layers={2}
+          threads={60}
+          brightness={0.8}
+          dpr={1}
         />
       </div>
 

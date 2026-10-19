@@ -1,3 +1,4 @@
+import GhostFibers from "./GhostFibers";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
@@ -79,6 +80,12 @@ const projects = [
     tags: ["Flutter", "Dart", "Game Development"],
     game: true,
     github: "https://github.com/Chethiya-Bandara/noughts-and-crosses",
+  },
+  {
+    title: "Task Tracker System",
+    desc: "A task tracking application built with ASP.NET Core MVC for organizing and managing tasks. It applies object-oriented programming principles and exception handling.",
+    tags: ["C#", "Task Management", "ASP.NET Core MVC", "Razor Views"],
+    github: "https://github.com/Chethiya-Bandara/task_tracker_system",
   },
   {
     title: "Sonora",
@@ -255,6 +262,18 @@ const Projects = () => {
             inset-0
             bg-[radial-gradient(circle_at_center,transparent_35%,rgba(2,10,6,0.75)_100%)]
           "
+        />
+      </div>
+
+      <div className="absolute inset-0 pointer-events-none opacity-60" aria-hidden="true">
+        <GhostFibers
+          glowColor="#10b981"
+          lineColor="#bbf7d0"
+          secondaryColor="#65a30d"
+          layers={2}
+          threads={60}
+          brightness={0.8}
+          dpr={1}
         />
       </div>
 

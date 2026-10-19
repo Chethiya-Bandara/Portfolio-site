@@ -1,42 +1,10 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import PixelBlast from "./PixelBlast";
+import GlowCursor from "./GlowCursor";
 import { FaGithub } from "react-icons/fa";
 
 const Hero = () => {
-  const heroRef = useRef(null);
-
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
-        repeat: -1,
-        yoyo: true,
-      });
-
-      tl.to(".hero-glow", {
-        scale: 1.15,
-        opacity: 0.85,
-        duration: 4,
-        ease: "sine.inOut",
-      }).to(
-        ".hero-glow",
-        {
-          x: 20,
-          y: -10,
-          duration: 4,
-          ease: "sine.inOut",
-        },
-        "<"
-      );
-    },
-    { scope: heroRef }
-  );
-
   return (
     <section
-      ref={heroRef}
       id="home"
       className="
         relative
@@ -61,33 +29,9 @@ const Hero = () => {
           "
         />
 
-        {/* PixelBlast */}
-        <div className="absolute inset-0 opacity-70">
-          <PixelBlast
-            variant="square"
-            pixelSize={4}
-            color="#22c55e"
-            patternScale={2}
-            patternDensity={1}
-            pixelSizeJitter={0}
-            enableRipples
-            rippleSpeed={0.35}
-            rippleThickness={0.1}
-            rippleIntensityScale={1.3}
-            liquid={false}
-            liquidStrength={0.1}
-            liquidRadius={1.2}
-            liquidWobbleSpeed={5}
-            speed={0.35}
-            edgeFade={0.35}
-            transparent
-          />
-        </div>
-
         {/* Central glow */}
         <div
           className="
-            hero-glow
             absolute
             left-1/2
             top-1/2
@@ -114,6 +58,19 @@ const Hero = () => {
 
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#04100c] to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#06120d] to-transparent" />
+      </div>
+
+      <div className="absolute inset-0 z-[1] pointer-events-none" aria-hidden="true">
+        <GlowCursor
+          color="#4ade80"
+          secondaryColor="#059669"
+          intensity={1.3}
+          trailWidth={3}
+          linger={1.4}
+          glow={1.2}
+          quality="medium"
+          clickBurst
+        />
       </div>
 
       <motion.div
