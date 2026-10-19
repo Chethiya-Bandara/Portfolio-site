@@ -43,7 +43,7 @@ const Education = () => {
         md:py-40
         px-6
         overflow-hidden
-        bg-[#070a12]
+        bg-[#06120d]
       "
     >
 
@@ -59,7 +59,7 @@ const Education = () => {
           "
         />
 
-        {/* Blue glow */}
+        {/* Emerald glow */}
         <div
           className="
             absolute
@@ -68,12 +68,12 @@ const Education = () => {
             w-[500px]
             h-[500px]
             rounded-full
-            bg-blue-600/[0.08]
+            bg-emerald-600/[0.08]
             blur-[150px]
           "
         />
 
-        {/* Purple glow */}
+        {/* Lime glow */}
         <div
           className="
             absolute
@@ -82,7 +82,7 @@ const Education = () => {
             w-[550px]
             h-[550px]
             rounded-full
-            bg-violet-600/[0.07]
+            bg-lime-600/[0.07]
             blur-[160px]
           "
         />
@@ -98,7 +98,7 @@ const Education = () => {
             w-[500px]
             h-[500px]
             rounded-full
-            bg-blue-500/[0.035]
+            bg-emerald-500/[0.035]
             blur-[140px]
           "
         />
@@ -108,7 +108,7 @@ const Education = () => {
           className="
             absolute
             inset-0
-            bg-[radial-gradient(circle_at_center,transparent_30%,rgba(3,5,12,0.8)_100%)]
+            bg-[radial-gradient(circle_at_center,transparent_30%,rgba(2,10,6,0.8)_100%)]
           "
         />
       </div>
@@ -123,20 +123,20 @@ const Education = () => {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-5">
-            <span className="w-8 h-px bg-gradient-to-r from-transparent to-blue-400/70" />
+            <span className="w-8 h-px bg-gradient-to-r from-transparent to-emerald-400/70" />
 
             <span
               className="
                 text-[10px]
                 uppercase
                 tracking-[0.35em]
-                text-blue-300/60
+                text-emerald-300/60
               "
             >
               Background
             </span>
 
-            <span className="w-8 h-px bg-gradient-to-l from-transparent to-blue-400/70" />
+            <span className="w-8 h-px bg-gradient-to-l from-transparent to-emerald-400/70" />
           </div>
 
           <h2
@@ -155,9 +155,9 @@ const Education = () => {
             <span
               className="
                 bg-gradient-to-r
-                from-cyan-300
-                via-blue-400
-                to-violet-500
+                from-green-300
+                via-emerald-400
+                to-lime-500
                 bg-clip-text
                 text-transparent
               "
@@ -192,9 +192,9 @@ const Education = () => {
               bottom-2
               w-px
               bg-gradient-to-b
-              from-blue-400/70
-              via-cyan-400/30
-              to-violet-500/20
+              from-emerald-400/70
+              via-green-400/30
+              to-lime-500/20
             "
           />
 
@@ -231,8 +231,8 @@ const Education = () => {
                     h-5
                     rounded-full
                     border
-                    border-blue-300/40
-                    bg-[#070a12]
+                    border-emerald-300/40
+                    bg-[#06120d]
                     flex
                     items-center
                     justify-center
@@ -246,8 +246,8 @@ const Education = () => {
                       rounded-full
                       ${
                         item.current
-                          ? "bg-cyan-400 shadow-[0_0_14px_rgba(34,211,238,0.9)]"
-                          : "bg-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.6)]"
+                          ? "bg-green-400 shadow-[0_0_14px_rgba(74,222,128,0.9)]"
+                          : "bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.6)]"
                       }
                     `}
                   />
@@ -273,9 +273,9 @@ const Education = () => {
                     md:p-7
                     transition-all
                     duration-300
-                    hover:border-blue-400/20
-                    hover:bg-blue-500/[0.025]
-                    hover:shadow-[0_15px_45px_rgba(37,99,235,0.08)]
+                    hover:border-emerald-400/20
+                    hover:bg-emerald-500/[0.025]
+                    hover:shadow-[0_15px_45px_rgba(5,150,105,0.08)]
                   "
                 >
                   {/* Top row */}
@@ -297,14 +297,14 @@ const Education = () => {
                         px-3
                         py-1.5
                         rounded-full
-                        bg-blue-500/[0.08]
+                        bg-emerald-500/[0.08]
                         border
-                        border-blue-400/10
+                        border-emerald-400/10
                         text-[10px]
                         uppercase
                         tracking-[0.2em]
                         font-semibold
-                        text-blue-300/80
+                        text-emerald-300/80
                       "
                     >
                       {item.year}
@@ -320,7 +320,7 @@ const Education = () => {
                           text-[9px]
                           uppercase
                           tracking-[0.2em]
-                          text-cyan-300/60
+                          text-green-300/60
                         "
                       >
                         <span
@@ -328,8 +328,8 @@ const Education = () => {
                             w-1.5
                             h-1.5
                             rounded-full
-                            bg-cyan-400
-                            shadow-[0_0_8px_rgba(34,211,238,0.8)]
+                            bg-green-400
+                            shadow-[0_0_8px_rgba(74,222,128,0.8)]
                           "
                         />
                         Current
@@ -370,7 +370,7 @@ const Education = () => {
                     className="
                       mt-1
                       text-sm
-                      text-cyan-300/50
+                      text-green-300/50
                     "
                   >
                     {item.focus}
@@ -400,7 +400,7 @@ const Education = () => {
                       h-px
                       bg-gradient-to-r
                       from-transparent
-                      via-blue-400/10
+                      via-emerald-400/10
                       to-transparent
                     "
                   />

@@ -48,7 +48,7 @@ const Hero = () => {
         text-center
         px-5
         overflow-hidden
-        bg-[#050816]
+        bg-[#04100c]
       "
     >
 
@@ -57,7 +57,7 @@ const Hero = () => {
           className="
             absolute
             inset-0
-            bg-[radial-gradient(circle_at_50%_45%,rgba(37,99,235,0.13),transparent_35%),radial-gradient(circle_at_15%_20%,rgba(6,182,212,0.08),transparent_30%),radial-gradient(circle_at_85%_75%,rgba(139,92,246,0.10),transparent_32%)]
+            bg-[radial-gradient(circle_at_50%_45%,rgba(5,150,105,0.13),transparent_35%),radial-gradient(circle_at_15%_20%,rgba(34,197,94,0.08),transparent_30%),radial-gradient(circle_at_85%_75%,rgba(101,163,13,0.10),transparent_32%)]
           "
         />
 
@@ -66,7 +66,7 @@ const Hero = () => {
           <PixelBlast
             variant="square"
             pixelSize={4}
-            color="#3155ff"
+            color="#22c55e"
             patternScale={2}
             patternDensity={1}
             pixelSizeJitter={0}
@@ -98,7 +98,7 @@ const Hero = () => {
             md:w-[700px]
             md:h-[700px]
             rounded-full
-            bg-blue-600/[0.07]
+            bg-emerald-600/[0.07]
             blur-[140px]
           "
         />
@@ -108,12 +108,12 @@ const Hero = () => {
           className="
             absolute
             inset-0
-            bg-[radial-gradient(circle_at_center,transparent_25%,rgba(3,5,12,0.72)_100%)]
+            bg-[radial-gradient(circle_at_center,transparent_25%,rgba(2,10,6,0.72)_100%)]
           "
         />
 
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#050816] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#070a12] to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#04100c] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#06120d] to-transparent" />
       </div>
 
       <motion.div
@@ -150,9 +150,9 @@ const Hero = () => {
           <span
             className="
               bg-gradient-to-r
-              from-cyan-300
-              via-blue-400
-              to-violet-500
+              from-green-300
+              via-emerald-400
+              to-lime-500
               bg-clip-text
               text-transparent
             "
@@ -169,7 +169,7 @@ const Hero = () => {
             h-px
             bg-gradient-to-r
             from-transparent
-            via-blue-400
+            via-emerald-400
             to-transparent
             mt-8
             mb-7
@@ -219,15 +219,15 @@ const Hero = () => {
               rounded-xl
               overflow-hidden
               bg-gradient-to-r
-              from-blue-500
-              to-violet-500
+              from-emerald-700
+              to-green-700
               text-white
               font-semibold
               text-sm
               transition-all
               duration-300
               hover:scale-[1.02]
-              hover:shadow-[0_0_35px_rgba(59,130,246,0.25)]
+              hover:shadow-[0_0_35px_rgba(16,185,129,0.25)]
             "
           >
             <span className="relative z-10 flex items-center gap-2">
@@ -242,9 +242,9 @@ const Hero = () => {
                 absolute
                 inset-0
                 bg-gradient-to-r
-                from-cyan-400/20
+                from-green-400/20
                 via-transparent
-                to-purple-400/20
+                to-lime-400/20
                 opacity-0
                 group-hover:opacity-100
                 transition-opacity
@@ -270,7 +270,7 @@ const Hero = () => {
               text-sm
               border
               border-white/10
-              hover:border-cyan-400/25
+              hover:border-green-400/25
               backdrop-blur-md
               transition-all
               duration-300
@@ -286,7 +286,7 @@ const Hero = () => {
             <span
               className="
                 text-white/40
-                group-hover:text-cyan-300
+                group-hover:text-green-300
                 transition-colors
               "
             >

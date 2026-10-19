@@ -90,7 +90,7 @@ const Navbar = () => {
             rounded-2xl
             border
             border-white/[0.08]
-            bg-[#050816]/75
+            bg-[#04100c]/75
             backdrop-blur-2xl
             shadow-[0_10px_40px_rgba(0,0,0,0.28)]
             px-4
@@ -128,8 +128,8 @@ const Navbar = () => {
                   w-2
                   h-2
                   rounded-full
-                  bg-cyan-400
-                  shadow-[0_0_12px_rgba(34,211,238,0.9)]
+                  bg-green-400
+                  shadow-[0_0_12px_rgba(74,222,128,0.9)]
                 "
               />
 
@@ -140,7 +140,7 @@ const Navbar = () => {
                   h-4
                   rounded-full
                   border
-                  border-cyan-400/20
+                  border-green-400/20
                   group-hover:scale-125
                   transition-transform
                   duration-300
@@ -161,9 +161,9 @@ const Navbar = () => {
               <span
                 className="
                   bg-gradient-to-r
-                  from-cyan-300
-                  via-blue-400
-                  to-violet-500
+                  from-green-300
+                  via-emerald-400
+                  to-lime-500
                   bg-clip-text
                   text-transparent
                 "
@@ -244,8 +244,8 @@ const Navbar = () => {
                         w-1
                         h-1
                         rounded-full
-                        bg-cyan-400
-                        shadow-[0_0_8px_rgba(34,211,238,0.9)]
+                        bg-green-400
+                        shadow-[0_0_8px_rgba(74,222,128,0.9)]
                       "
                       transition={{
                         type: "spring",
@@ -311,7 +311,7 @@ const Navbar = () => {
                 justify-center
                 text-white/60
                 hover:text-white
-                hover:border-blue-400/20
+                hover:border-emerald-400/20
                 transition-all
                 duration-300
               "
@@ -395,7 +395,7 @@ const Navbar = () => {
                 rounded-2xl
                 border
                 border-white/[0.08]
-                bg-[#050816]/90
+                bg-[#04100c]/90
                 backdrop-blur-2xl
                 shadow-[0_20px_50px_rgba(0,0,0,0.3)]
                 overflow-hidden
@@ -407,7 +407,7 @@ const Navbar = () => {
                   h-px
                   bg-gradient-to-r
                   from-transparent
-                  via-blue-400/40
+                  via-emerald-400/40
                   to-transparent
                 "
               />
@@ -446,7 +446,7 @@ const Navbar = () => {
                             duration-300
                             ${
                               isActive
-                                ? "bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]"
+                                ? "bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)]"
                                 : "bg-white/15"
                             }
                           `}

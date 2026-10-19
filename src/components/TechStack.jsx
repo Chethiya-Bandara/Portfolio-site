@@ -197,7 +197,7 @@ const TechStack = () => {
         py-32
         px-6
         md:px-8
-        bg-[#070a12]
+        bg-[#06120d]
         border-t
         border-white/[0.06]
         overflow-hidden
@@ -222,7 +222,7 @@ const TechStack = () => {
           />
         </div>
 
-        {/* Ambient blue */}
+        {/* Ambient emerald */}
         <div
           className="
             absolute
@@ -231,12 +231,12 @@ const TechStack = () => {
             w-[450px]
             h-[450px]
             rounded-full
-            bg-blue-600/[0.07]
+            bg-emerald-600/[0.07]
             blur-[130px]
           "
         />
 
-        {/* Ambient violet */}
+        {/* Ambient lime */}
         <div
           className="
             absolute
@@ -245,12 +245,12 @@ const TechStack = () => {
             w-[500px]
             h-[500px]
             rounded-full
-            bg-violet-600/[0.08]
+            bg-lime-600/[0.08]
             blur-[150px]
           "
         />
 
-        {/* Cyan glow */}
+        {/* Green glow */}
         <div
           className="
             absolute
@@ -260,7 +260,7 @@ const TechStack = () => {
             w-[300px]
             h-[300px]
             rounded-full
-            bg-cyan-500/[0.04]
+            bg-green-500/[0.04]
             blur-[120px]
           "
         />
@@ -270,7 +270,7 @@ const TechStack = () => {
           className="
             absolute
             inset-0
-            bg-[radial-gradient(circle_at_center,transparent_25%,rgba(3,5,12,0.75)_100%)]
+            bg-[radial-gradient(circle_at_center,transparent_25%,rgba(2,10,6,0.75)_100%)]
           "
         />
       </div>
@@ -312,9 +312,9 @@ const TechStack = () => {
             <span
               className="
                 bg-gradient-to-r
-                from-cyan-300
-                via-blue-400
-                to-violet-500
+                from-green-300
+                via-emerald-400
+                to-lime-500
                 bg-clip-text
                 text-transparent
               "
@@ -373,12 +373,12 @@ const TechStack = () => {
                     flex-col
                     backdrop-blur-xl
                   "
-                  backgroundColor="rgba(9, 13, 24, 0.78)"
+                  backgroundColor="rgba(9, 23, 15, 0.78)"
                   borderRadius={20}
                   colors={[
-                    "#3b82f6",
-                    "#06b6d4",
-                    "#8b5cf6",
+                    "#10b981",
+                    "#4ade80",
+                    "#a3e635",
                   ]}
                   edgeSensitivity={38}
                 >
@@ -464,9 +464,9 @@ const TechStack = () => {
                             border
                             border-white/[0.08]
                             bg-white/[0.025]
-                            hover:bg-blue-500/[0.08]
-                            hover:text-cyan-300
-                            hover:border-cyan-400/20
+                            hover:bg-emerald-500/[0.08]
+                            hover:text-green-300
+                            hover:border-green-400/20
                             transition-all
                             duration-300
                             cursor-default
@@ -482,8 +482,8 @@ const TechStack = () => {
                               group-hover/skill:opacity-100
                               transition-opacity
                               bg-gradient-to-r
-                              from-blue-500/[0.08]
-                              to-violet-500/[0.08]
+                              from-emerald-500/[0.08]
+                              to-lime-500/[0.08]
                             "
                           />
 
@@ -495,7 +495,7 @@ const TechStack = () => {
                               z-10
                               shrink-0
                               text-white/40
-                              group-hover/skill:text-cyan-300
+                              group-hover/skill:text-green-300
                               transition-colors
                               duration-300
                             "

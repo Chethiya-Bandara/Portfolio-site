@@ -9,7 +9,7 @@ import { ArrowUp } from "lucide-react";
 
 function App() {
   return (
-    <div className="bg-[#050505] selection:bg-blue-500 selection:text-white">
+    <div className="bg-[#050505] selection:bg-emerald-500 selection:text-white">
       <Navbar />
       <Hero />
       <About />
@@ -24,7 +24,7 @@ function App() {
           overflow-hidden
           border-t
           border-white/[0.06]
-          bg-[#050816]
+          bg-[#04100c]
         "
       >
         {/* Background */}
@@ -48,7 +48,7 @@ function App() {
               w-[500px]
               h-[200px]
               rounded-full
-              bg-blue-600/[0.05]
+              bg-emerald-600/[0.05]
               blur-[100px]
             "
           />
@@ -57,7 +57,7 @@ function App() {
             className="
               absolute
               inset-0
-              bg-[radial-gradient(circle_at_center,transparent_20%,rgba(3,5,12,0.7)_100%)]
+              bg-[radial-gradient(circle_at_center,transparent_20%,rgba(2,10,6,0.7)_100%)]
             "
           />
         </div>
@@ -137,8 +137,8 @@ function App() {
                 bg-white/[0.02]
                 text-white/35
                 hover:text-white
-                hover:border-blue-400/20
-                hover:bg-blue-500/[0.05]
+                hover:border-emerald-400/20
+                hover:bg-emerald-500/[0.05]
                 transition-all
                 duration-300
               "

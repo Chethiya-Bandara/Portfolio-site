@@ -7,19 +7,19 @@ const focusAreas = [
     title: "Backend & Architecture",
     description:
       "Designing APIs, data models, authentication flows, and scalable backend systems with a strong focus on structure and reliability.",
-    color: "blue",
+    color: "emerald",
   },
   {
     title: "Machine Learning",
     description:
       "Building and integrating ML solutions that turn data into practical insights, from computer vision to predictive analytics.",
-    color: "violet",
+    color: "lime",
   },
   {
     title: "Full-Stack Engineering",
     description:
       "Connecting backend systems and databases to responsive interfaces while keeping the overall product coherent and maintainable.",
-    color: "cyan",
+    color: "green",
   },
 ];
 
@@ -48,7 +48,7 @@ const About = () => {
         border-t
         border-white/[0.06]
         overflow-hidden
-        bg-[#070a12]
+        bg-[#06120d]
       "
     >
       {/* =====================================================
@@ -61,7 +61,7 @@ const About = () => {
           className="
             absolute
             inset-0
-            bg-[radial-gradient(circle_at_75%_35%,rgba(37,99,235,0.16),transparent_34%),radial-gradient(circle_at_20%_80%,rgba(139,92,246,0.10),transparent_32%),linear-gradient(to_bottom,#070a12,#080d18)]
+            bg-[radial-gradient(circle_at_75%_35%,rgba(5,150,105,0.16),transparent_34%),radial-gradient(circle_at_20%_80%,rgba(101,163,13,0.10),transparent_32%),linear-gradient(to_bottom,#06120d,#091a12)]
             pointer-events-none
           "
         />
@@ -71,7 +71,7 @@ const About = () => {
           <PixelBlast
             variant="diamond"
             pixelSize={4}
-            color="#38bdf8"
+            color="#4ade80"
             patternScale={2.4}
             patternDensity={0.82}
             pixelSizeJitter={0.18}
@@ -97,7 +97,7 @@ const About = () => {
             h-32
             bg-gradient-to-b
             from-transparent
-            via-cyan-300/[0.035]
+            via-green-300/[0.035]
             to-transparent
             pointer-events-none
           "
@@ -105,7 +105,7 @@ const About = () => {
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
         />
 
-        {/* Blue glow */}
+        {/* Emerald glow */}
         <div
           className="
             absolute
@@ -114,13 +114,13 @@ const About = () => {
             w-[550px]
             h-[550px]
             rounded-full
-            bg-blue-600/[0.07]
+            bg-emerald-600/[0.07]
             blur-[150px]
             pointer-events-none
           "
         />
 
-        {/* Violet glow */}
+        {/* Lime glow */}
         <div
           className="
             absolute
@@ -129,7 +129,7 @@ const About = () => {
             w-[500px]
             h-[500px]
             rounded-full
-            bg-violet-600/[0.06]
+            bg-lime-600/[0.06]
             blur-[150px]
             pointer-events-none
           "
@@ -140,7 +140,7 @@ const About = () => {
           className="
             absolute
             inset-0
-            bg-[radial-gradient(circle_at_center,transparent_28%,rgba(3,5,12,0.8)_100%)]
+            bg-[radial-gradient(circle_at_center,transparent_28%,rgba(2,10,6,0.8)_100%)]
             pointer-events-none
           "
         />
@@ -160,20 +160,20 @@ const About = () => {
           className="mb-16"
         >
           <div className="flex items-center gap-3 mb-6">
-            <span className="w-8 h-px bg-gradient-to-r from-transparent to-blue-400/70" />
+            <span className="w-8 h-px bg-gradient-to-r from-transparent to-emerald-400/70" />
 
             <span
               className="
                 text-[10px]
                 uppercase
                 tracking-[0.35em]
-                text-blue-300/60
+                text-emerald-300/60
               "
             >
               About Me
             </span>
 
-            <span className="w-8 h-px bg-gradient-to-l from-transparent to-blue-400/70" />
+            <span className="w-8 h-px bg-gradient-to-l from-transparent to-emerald-400/70" />
           </div>
 
           <h2
@@ -193,9 +193,9 @@ const About = () => {
             <span
               className="
                 bg-gradient-to-r
-                from-cyan-300
-                via-blue-400
-                to-violet-500
+                from-green-300
+                via-emerald-400
+                to-lime-500
                 bg-clip-text
                 text-transparent
               "
@@ -299,7 +299,7 @@ const About = () => {
                 mt-10
                 pl-6
                 border-l-2
-                border-blue-500/20
+                border-emerald-500/20
               "
             >
               <div
@@ -310,8 +310,8 @@ const About = () => {
                   bottom-0
                   w-px
                   bg-gradient-to-b
-                  from-blue-400
-                  via-cyan-400/40
+                  from-emerald-400
+                  via-green-400/40
                   to-transparent
                 "
               />
@@ -351,16 +351,16 @@ const About = () => {
               backgroundColor="transparent"
               borderRadius={24}
               colors={[
-                "#3b82f6",
-                "#06b6d4",
-                "#8b5cf6",
+                "#10b981",
+                "#4ade80",
+                "#a3e635",
               ]}
               edgeSensitivity={35}
             >
               <div
                 className="
                   rounded-[23px]
-                  bg-[#080d18]/90
+                  bg-[#091a12]/90
                   backdrop-blur-2xl
                   border
                   border-white/[0.05]
@@ -376,7 +376,7 @@ const About = () => {
                         text-[10px]
                         uppercase
                         tracking-[0.3em]
-                        text-blue-300/60
+                        text-emerald-300/60
                       "
                     >
                       Engineering Focus
@@ -392,8 +392,8 @@ const About = () => {
                       w-2
                       h-2
                       rounded-full
-                      bg-cyan-400
-                      shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                      bg-green-400
+                      shadow-[0_0_12px_rgba(74,222,128,0.8)]
                     "
                   />
                 </div>
@@ -431,11 +431,11 @@ const About = () => {
                             rounded-full
                             shrink-0
                             ${
-                              area.color === "blue"
-                                ? "bg-blue-400 shadow-[0_0_9px_rgba(96,165,250,0.7)]"
-                                : area.color === "violet"
-                                ? "bg-violet-400 shadow-[0_0_9px_rgba(167,139,250,0.7)]"
-                                : "bg-cyan-400 shadow-[0_0_9px_rgba(34,211,238,0.7)]"
+                              area.color === "emerald"
+                                ? "bg-emerald-400 shadow-[0_0_9px_rgba(52,211,153,0.7)]"
+                                : area.color === "lime"
+                                ? "bg-lime-400 shadow-[0_0_9px_rgba(163,230,53,0.7)]"
+                                : "bg-green-400 shadow-[0_0_9px_rgba(74,222,128,0.7)]"
                             }
                           `}
                         />

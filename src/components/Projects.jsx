@@ -195,7 +195,7 @@ const Projects = () => {
         px-6
         md:px-8
         overflow-hidden
-        bg-[#070a12]
+        bg-[#06120d]
       "
     >
       <div className="absolute inset-0 pointer-events-none">
@@ -204,7 +204,7 @@ const Projects = () => {
           className="
             absolute
             inset-0
-            bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.12),transparent_35%),radial-gradient(circle_at_80%_75%,rgba(139,92,246,0.14),transparent_35%),linear-gradient(to_bottom,#070a12,#0a0d16)]
+            bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.12),transparent_35%),radial-gradient(circle_at_80%_75%,rgba(101,163,13,0.14),transparent_35%),linear-gradient(to_bottom,#06120d,#091810)]
           "
         />
 
@@ -220,7 +220,7 @@ const Projects = () => {
           }}
         />
 
-        {/* Blue glow */}
+        {/* Emerald glow */}
         <div
           className="
             absolute
@@ -229,12 +229,12 @@ const Projects = () => {
             w-[500px]
             h-[500px]
             rounded-full
-            bg-blue-600/10
+            bg-emerald-600/10
             blur-[140px]
           "
         />
 
-        {/* Purple glow */}
+        {/* Lime glow */}
         <div
           className="
             absolute
@@ -243,7 +243,7 @@ const Projects = () => {
             w-[600px]
             h-[600px]
             rounded-full
-            bg-purple-600/10
+            bg-lime-600/10
             blur-[160px]
           "
         />
@@ -253,7 +253,7 @@ const Projects = () => {
           className="
             absolute
             inset-0
-            bg-[radial-gradient(circle_at_center,transparent_35%,rgba(3,5,10,0.75)_100%)]
+            bg-[radial-gradient(circle_at_center,transparent_35%,rgba(2,10,6,0.75)_100%)]
           "
         />
       </div>
@@ -283,9 +283,9 @@ const Projects = () => {
                 <span
                   className="
                     bg-gradient-to-r
-                    from-blue-400
-                    via-cyan-400
-                    to-purple-500
+                    from-emerald-400
+                    via-green-400
+                    to-lime-500
                     bg-clip-text
                     text-transparent
                   "
@@ -317,9 +317,9 @@ const Projects = () => {
                   text-white/70
                   transition-all
                   duration-300
-                  hover:bg-blue-500/10
-                  hover:border-blue-400/30
-                  hover:text-blue-300
+                  hover:bg-emerald-500/10
+                  hover:border-emerald-400/30
+                  hover:text-emerald-300
                   disabled:opacity-20
                   disabled:cursor-not-allowed
                 "
@@ -356,9 +356,9 @@ const Projects = () => {
                   text-white/70
                   transition-all
                   duration-300
-                  hover:bg-purple-500/10
-                  hover:border-purple-400/30
-                  hover:text-purple-300
+                  hover:bg-lime-500/10
+                  hover:border-lime-400/30
+                  hover:text-lime-300
                   disabled:opacity-20
                   disabled:cursor-not-allowed
                 "
@@ -383,8 +383,8 @@ const Projects = () => {
             relative
             rounded-[28px]
             border
-            border-blue-300/[0.14]
-            bg-[#10192a]
+            border-emerald-300/[0.14]
+            bg-[#10231a]
             backdrop-blur-xl
             shadow-[0_24px_90px_rgba(0,0,0,0.42),inset_0_1px_0_rgba(255,255,255,0.04)]
             overflow-hidden
@@ -395,7 +395,7 @@ const Projects = () => {
             className="
               absolute
               inset-0
-              bg-[radial-gradient(circle_at_12%_15%,rgba(37,99,235,0.16),transparent_32%),radial-gradient(circle_at_88%_85%,rgba(8,145,178,0.10),transparent_34%),linear-gradient(135deg,#121d31_0%,#0d1627_52%,#101a2d_100%)]
+              bg-[radial-gradient(circle_at_12%_15%,rgba(5,150,105,0.16),transparent_32%),radial-gradient(circle_at_88%_85%,rgba(22,163,74,0.10),transparent_34%),linear-gradient(135deg,#12291d_0%,#0b1e15_52%,#10251a_100%)]
               pointer-events-none
             "
           />
@@ -406,7 +406,7 @@ const Projects = () => {
               absolute
               inset-0
               opacity-[0.12]
-              bg-[linear-gradient(rgba(147,197,253,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(147,197,253,0.08)_1px,transparent_1px)]
+              bg-[linear-gradient(rgba(110,231,183,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(110,231,183,0.08)_1px,transparent_1px)]
               [background-size:44px_44px]
               pointer-events-none
             "
@@ -422,7 +422,7 @@ const Projects = () => {
               h-px
               bg-gradient-to-r
               from-transparent
-              via-cyan-300/55
+              via-green-300/55
               to-transparent
               pointer-events-none
               z-20
@@ -440,7 +440,7 @@ const Projects = () => {
               w-[80%]
               h-[70%]
               rounded-full
-              bg-blue-400/[0.07]
+              bg-emerald-400/[0.07]
               blur-[100px]
               pointer-events-none
             "
@@ -541,7 +541,7 @@ const Projects = () => {
                   y: -6,
                   scale: 1.01,
                   boxShadow:
-                    "0 18px 45px rgba(59,130,246,0.12)",
+                    "0 18px 45px rgba(16,185,129,0.12)",
                 }}
                 className="
                   relative
@@ -602,21 +602,21 @@ const Projects = () => {
                         px-3
                         py-1.5
                         rounded-full
-                        bg-cyan-400/[0.12]
+                        bg-green-400/[0.12]
                         border
-                        border-cyan-300/30
-                        text-cyan-300
+                        border-green-300/30
+                        text-green-300
                         text-[9px]
                         font-bold
                         uppercase
                         tracking-[0.18em]
-                        shadow-[0_0_18px_rgba(34,211,238,0.10)]
+                        shadow-[0_0_18px_rgba(74,222,128,0.10)]
                         backdrop-blur-md
                       "
                     >
                       <span className="relative flex h-1.5 w-1.5">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-50" />
-                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-300" />
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-50" />
+                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-300" />
                       </span>
 
                       In Development
@@ -662,12 +662,12 @@ const Projects = () => {
                     flex-col
                     backdrop-blur-xl
                   "
-                  backgroundColor="rgba(8, 13, 24, 0.88)"
+                  backgroundColor="rgba(8, 22, 14, 0.88)"
                   borderRadius={18}
                   colors={[
-                    "#3b82f6",
-                    "#06b6d4",
-                    "#8b5cf6",
+                    "#10b981",
+                    "#4ade80",
+                    "#a3e635",
                   ]}
                   edgeSensitivity={35}
                 >
@@ -691,8 +691,8 @@ const Projects = () => {
                           w-2
                           h-2
                           rounded-full
-                          bg-cyan-400
-                          shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                          bg-green-400
+                          shadow-[0_0_12px_rgba(74,222,128,0.8)]
                         "
                       />
                     </div>
@@ -725,9 +725,9 @@ const Projects = () => {
                             border
                             border-white/10
                             transition-all
-                            hover:bg-blue-500/10
-                            hover:text-blue-300
-                            hover:border-blue-500/30
+                            hover:bg-emerald-500/10
+                            hover:text-emerald-300
+                            hover:border-emerald-500/30
                           "
                         >
                           {tag}
@@ -754,8 +754,8 @@ const Projects = () => {
                         bg-gradient-to-r
                         from-white/[0.06]
                         to-white/[0.03]
-                        hover:from-blue-500/15
-                        hover:to-purple-500/15
+                        hover:from-emerald-500/15
+                        hover:to-lime-500/15
                         text-white/80
                         hover:text-white
                         text-[10px]
@@ -764,7 +764,7 @@ const Projects = () => {
                         font-semibold
                         border
                         border-white/10
-                        hover:border-blue-400/30
+                        hover:border-emerald-400/30
                         transition-all
                         duration-300
                       "
@@ -773,7 +773,7 @@ const Projects = () => {
                         size={16}
                         className="
                           text-white/40
-                          group-hover:text-cyan-300
+                          group-hover:text-green-300
                           transition-colors
                           duration-300
                         "
@@ -784,7 +784,7 @@ const Projects = () => {
                       <span
                         className="
                           text-white/30
-                          group-hover:text-cyan-300
+                          group-hover:text-green-300
                           transition-all
                           duration-300
                           group-hover:translate-x-0.5
@@ -814,8 +814,8 @@ const Projects = () => {
                         bg-gradient-to-r
                         from-white/[0.06]
                         to-white/[0.03]
-                        hover:from-blue-500/15
-                        hover:to-purple-500/15
+                        hover:from-emerald-500/15
+                        hover:to-lime-500/15
                         text-white/80
                         hover:text-white
                         text-[10px]
@@ -824,7 +824,7 @@ const Projects = () => {
                         font-semibold
                         border
                         border-white/10
-                        hover:border-blue-400/30
+                        hover:border-emerald-400/30
                         transition-all
                         duration-300
                       "
@@ -834,7 +834,7 @@ const Projects = () => {
                       <span
                         className="
                           text-white/30
-                          group-hover:text-cyan-300
+                          group-hover:text-green-300
                           transition-all
                           duration-300
                           group-hover:translate-x-0.5
@@ -876,7 +876,7 @@ const Projects = () => {
                   flex-col
                   backdrop-blur-xl
                 "
-                backgroundColor="rgba(8, 11, 18, 0.55)"
+                backgroundColor="rgba(8, 19, 12, 0.55)"
                 borderRadius={18}
                 colors={[
                   "#1e293b",
@@ -921,7 +921,7 @@ const Projects = () => {
                       }}
                       className="
                         text-2xl
-                        text-blue-400
+                        text-emerald-400
                         font-light
                       "
                     >
@@ -971,7 +971,7 @@ const Projects = () => {
               right-0
               h-6
               bg-gradient-to-t
-              from-[#0c1220]/70
+              from-[#0a1c13]/70
               to-transparent
               pointer-events-none
             "

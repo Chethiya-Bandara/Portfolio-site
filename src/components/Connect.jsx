@@ -18,18 +18,18 @@ const Connect = () => {
       label: "Professional Network",
       url: "https://www.linkedin.com/in/chethiya-bandara-845017330/",
       icon: FaLinkedin,
-      iconColor: "group-hover:text-blue-400",
+      iconColor: "group-hover:text-emerald-400",
       hover:
-        "hover:text-blue-300 hover:border-blue-400/25 hover:bg-blue-500/[0.05]",
+        "hover:text-emerald-300 hover:border-emerald-400/25 hover:bg-emerald-500/[0.05]",
     },
     {
       name: "Email",
       label: "Let's talk",
       url: "mailto:Chethiyabandara2004@gmail.com",
       icon: FaEnvelope,
-      iconColor: "group-hover:text-cyan-400",
+      iconColor: "group-hover:text-green-400",
       hover:
-        "hover:text-cyan-300 hover:border-cyan-400/25 hover:bg-cyan-500/[0.05]",
+        "hover:text-green-300 hover:border-green-400/25 hover:bg-green-500/[0.05]",
     },
   ];
 
@@ -40,7 +40,7 @@ const Connect = () => {
         relative
         py-32
         md:py-40
-        bg-[#050816]
+        bg-[#04100c]
         border-t
         border-white/[0.06]
         overflow-hidden
@@ -59,7 +59,7 @@ const Connect = () => {
           "
         />
 
-        {/* Blue glow */}
+        {/* Emerald glow */}
         <div
           className="
             absolute
@@ -68,12 +68,12 @@ const Connect = () => {
             w-[500px]
             h-[500px]
             rounded-full
-            bg-blue-600/[0.08]
+            bg-emerald-600/[0.08]
             blur-[150px]
           "
         />
 
-        {/* Cyan glow */}
+        {/* Green glow */}
         <div
           className="
             absolute
@@ -82,12 +82,12 @@ const Connect = () => {
             w-[450px]
             h-[450px]
             rounded-full
-            bg-cyan-500/[0.06]
+            bg-green-500/[0.06]
             blur-[150px]
           "
         />
 
-        {/* Violet glow */}
+        {/* Lime glow */}
         <div
           className="
             absolute
@@ -96,7 +96,7 @@ const Connect = () => {
             w-[450px]
             h-[450px]
             rounded-full
-            bg-violet-600/[0.07]
+            bg-lime-600/[0.07]
             blur-[150px]
           "
         />
@@ -106,7 +106,7 @@ const Connect = () => {
           className="
             absolute
             inset-0
-            bg-[radial-gradient(ellipse_at_center,transparent_25%,rgba(3,5,12,0.8)_100%)]
+            bg-[radial-gradient(ellipse_at_center,transparent_25%,rgba(2,10,6,0.8)_100%)]
           "
         />
       </div>
@@ -120,13 +120,13 @@ const Connect = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center justify-center gap-3 mb-7"
         >
-          <span className="w-8 h-px bg-gradient-to-r from-transparent to-blue-400/60" />
+          <span className="w-8 h-px bg-gradient-to-r from-transparent to-emerald-400/60" />
 
-          <span className="text-[10px] uppercase tracking-[0.35em] text-blue-300/60">
+          <span className="text-[10px] uppercase tracking-[0.35em] text-emerald-300/60">
             Let's Connect
           </span>
 
-          <span className="w-8 h-px bg-gradient-to-l from-transparent to-blue-400/60" />
+          <span className="w-8 h-px bg-gradient-to-l from-transparent to-emerald-400/60" />
         </motion.div>
 
         {/* Main heading */}
@@ -155,9 +155,9 @@ const Connect = () => {
           <span
             className="
               bg-gradient-to-r
-              from-cyan-300
-              via-blue-400
-              to-violet-500
+              from-green-300
+              via-emerald-400
+              to-lime-500
               bg-clip-text
               text-transparent
             "
@@ -203,13 +203,13 @@ const Connect = () => {
             py-4
             rounded-xl
             bg-gradient-to-r
-            from-blue-500
-            to-violet-500
+            from-emerald-700
+            to-green-700
             text-white
             text-sm
             font-semibold
-            shadow-[0_0_30px_rgba(59,130,246,0.12)]
-            hover:shadow-[0_0_40px_rgba(59,130,246,0.22)]
+            shadow-[0_0_30px_rgba(16,185,129,0.12)]
+            hover:shadow-[0_0_40px_rgba(16,185,129,0.22)]
             transition-all
             duration-300
           "
