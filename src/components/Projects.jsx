@@ -1,5 +1,5 @@
 import GhostFibers from "./GhostFibers";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
@@ -128,6 +128,7 @@ const projects = [
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const touchStart = useRef(null);
   const reduceMotion = useReducedMotion();
   const project = projects[activeIndex];
   const navigate = (direction) => {
@@ -158,7 +159,15 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-[28px] border border-emerald-300/15 bg-[#091b12]/95 shadow-[0_24px_90px_rgba(0,0,0,0.35)]" onKeyDown={(event) => {
+        <div className="relative touch-pan-y overflow-hidden rounded-[28px] border border-emerald-300/15 bg-[#091b12]/95 shadow-[0_24px_90px_rgba(0,0,0,0.35)]" onTouchStart={(event) => {
+          if (event.touches.length === 1) touchStart.current = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+        }} onTouchEnd={(event) => {
+          if (!touchStart.current || !event.changedTouches.length) return;
+          const dx = event.changedTouches[0].clientX - touchStart.current.x;
+          const dy = event.changedTouches[0].clientY - touchStart.current.y;
+          touchStart.current = null;
+          if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) navigate(dx < 0 ? 1 : -1);
+        }} onTouchCancel={() => { touchStart.current = null; }} onKeyDown={(event) => {
           if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
             event.preventDefault();
             navigate(event.key === "ArrowLeft" ? -1 : 1);
