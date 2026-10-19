@@ -4,6 +4,18 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
+import { SiReact, SiFastapi, SiPostgresql, SiSupabase, SiNextdotjs, SiTailwindcss, SiGooglegemini, SiExpress, SiPrisma, SiJsonwebtokens, SiGo, SiDocker, SiUnity, SiFlutter, SiDart, SiDotnet, SiTypescript, SiTauri, SiRust, SiSpotify, SiPython, SiTensorflow, SiStreamlit } from "react-icons/si";
+
+const technologyIcons = {
+  React: SiReact, "React.js": SiReact, FastAPI: SiFastapi, PostgreSQL: SiPostgresql,
+  Supabase: SiSupabase, "Next.js": SiNextdotjs, Tailwind: SiTailwindcss,
+  "Tailwind CSS": SiTailwindcss, Gemini: SiGooglegemini, "Express.js": SiExpress,
+  Prisma: SiPrisma, JWT: SiJsonwebtokens, Go: SiGo, Docker: SiDocker,
+  Unity: SiUnity, Flutter: SiFlutter, Dart: SiDart, "ASP.NET Core MVC": SiDotnet,
+  TypeScript: SiTypescript, Tauri: SiTauri, Rust: SiRust, "Spotify API": SiSpotify,
+  Python: SiPython, TensorFlow: SiTensorflow, Streamlit: SiStreamlit,
+};
+
 const projects = [
   {
     title: "MediConnect",
@@ -158,14 +170,17 @@ const Projects = () => {
               <div className="flex flex-col items-start">
                 <div className="mb-8 flex flex-wrap items-center gap-2">
                   <span className="font-mono text-xs tracking-widest text-emerald-300/70">{String(activeIndex + 1).padStart(2, "0")} / PROJECT</span>
-                  {project.featured && <span className="rounded-full border border-green-300/20 bg-green-400/10 px-3 py-1 text-[10px] uppercase tracking-wider text-green-200">Featured</span>}
-                  {project.development && <span className="rounded-full border border-green-300/20 bg-green-400/10 px-3 py-1 text-[10px] uppercase tracking-wider text-green-200">In development</span>}
-                  {project.game && <span className="rounded-full border border-green-300/20 bg-green-400/10 px-3 py-1 text-[10px] uppercase tracking-wider text-green-200">Game</span>}
+                  {project.featured && <span className="rounded-full border border-amber-300/35 bg-amber-400/10 px-3 py-1 text-[10px] uppercase tracking-wider text-amber-300">Featured</span>}
+                  {project.development && <span className="rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 text-[10px] uppercase tracking-wider text-emerald-300">In development</span>}
+                  {project.game && <span className="rounded-full border border-lime-300/30 bg-lime-400/10 px-3 py-1 text-[10px] uppercase tracking-wider text-lime-300">Game</span>}
                 </div>
                 <h3 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">{project.title}</h3>
                 <p className="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">{project.desc}</p>
                 <div className="mt-7 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => <span key={tag} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-green-100/75">{tag}</span>)}
+                  {project.tags.map((tag) => {
+                    const Icon = technologyIcons[tag];
+                    return <span key={tag} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-green-100/75">{Icon && <Icon aria-hidden="true" className="text-green-300" size={14} />}{tag}</span>;
+                  })}
                 </div>
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="group mt-9 inline-flex items-center gap-2 border-b border-emerald-400/50 pb-2 text-sm font-semibold text-green-300 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-400">
                   {project.github.includes("github.com") ? <><FaGithub size={16} /> View on GitHub</> : "Play game"}<ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
